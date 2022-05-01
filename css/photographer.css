@@ -1,6 +1,10 @@
 #contact_modal {
     display: none;
 }
+.logo{
+    height: 50px;
+    margin-left: 10px;
+}
 main{
     display: flex;
     justify-content: center;
@@ -9,14 +13,13 @@ main{
     background-color: #FAFAFA;
     display: flex;
     justify-content: space-between;
+    padding-top: 80px;
     height: 300px;
     margin: 0 10px;
-    border:2px solid blue;
     width: 100%;
 }
-#photographer-name{
-
-    color:blue;
+h2{
+    color:#D3573C;
 }
 .contact_button {
     font-size: 20px;
@@ -29,8 +32,14 @@ main{
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+    margin: 80px;
 }
 
+ img{
+     
+    width: 75px;
+    height: 75px;
+}
 .modal {
     border-radius: 5px;
     background-color: #DB8876;

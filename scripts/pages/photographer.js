@@ -9,12 +9,12 @@ async function initPhotographer() {
 async function displaySite(photographers){
     const photographerMain = document.getElementById("photographer-name");
     photographers.forEach((photographer) => {
-        const photographerPage = photographerSiteFactory(photographer);
+        const photographerPage = making_personal_website(photographer);
         const photographerCardDOM = photographerPage.photographerCardDOM();
         photographerMain.appendChild(photographerCardDOM)
     });
 }
-async function displayHeader(photograpehrs){
+/*async function displayHeader(photograpehrs){
     const photographerHead = document.getElementById("photo-head");
     photographers.forEach((photographer)=>{
         const photographerHeader = photographerFactoryHeader(photographer);
@@ -22,7 +22,7 @@ async function displayHeader(photograpehrs){
         photographerHeader.appendChild(photographerCardHead);
 
     })
-}
+}*/
 async function init() {
     // Récupère les datas des photographes
     const { photographers } = await initPhotographer();

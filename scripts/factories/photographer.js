@@ -4,9 +4,10 @@
 function photographerFactory(data) {
     const { name, portrait, city, country, tagline, price } = data;
 
-    const picture = `assets/photographers/test/${portrait}`;
+    const picture = `assets/photographers/PhotographerId/${portrait}`;
 
     function getUserCardDOM() {
+        
         const article = document.createElement( 'article' );
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture)
