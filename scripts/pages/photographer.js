@@ -7,7 +7,8 @@ async function initPhotographer() {
 }
 
 async function displaySite(photographers){
-    const photographerMain = document.getElementById("photographer-name");
+    /*tutaj bedzie wstrzykiwany kod html et js w miejsce diva ktory jest juz w html z id phootgrapher-card*/
+    const photographerMain = document.getElementById("photographer-card");
     photographers.forEach((photographer) => {
         const photographerPage = making_personal_website(photographer);
         const photographerCardDOM = photographerPage.photographerCardDOM();

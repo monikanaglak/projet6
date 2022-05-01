@@ -4,33 +4,28 @@
 
 function making_personal_website(photographer) {
     const { name, portrait, city, country, tagline, price, id, alt } = photographer;
-    const picture = `./assets/photographers/PhotographerId/${portrait}`;
-    console.log(picture);
-    
-    /*function photographerCardDOM() {
-        const article = document.createElement( 'h2' );
-        article.textContent = name;
-        
-        
-        return (article);
-    }
-    return { name,photographerCardDOM }*/
+    const picture = `./assets/photographers/PhotographersPortrait/${portrait}`;
+
     function photographerCardDOM (){
     const wrapperHeader = document.createElement("div");
     wrapperHeader.classList.add("photograph_header");
     wrapperHeader.classList.add(id);
 
     const photographerCardDOM = `
-    <div class="photograph-info">
-        <div id="card${photographer.id}">
-            <h2>${name}</h2>
+    <div class="container_header_photographer">
+        <div class="photographer_info">
+            <div id="card${photographer.id}">
+                <h2>${name}</h2>
+            </div>
+            <h3>${city}, ${country}</h3>
+            <p>${tagline}</p>
         </div>
-        <h3>${city}, ${country}</h3>
-        <p>${tagline}</p>
-    
-    
-    
-<img src="${picture}"></img>
+        <div class="button_contact">
+            <button class="contact_buttons" onclick="display-Modal()">Contactez-moi</button>
+        </div>
+        <div class="photographer_image">
+            <img src="${picture}"></img>
+        </div>
     </div>
      `;
 
