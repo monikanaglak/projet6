@@ -12,9 +12,11 @@
       <img src="assets/images/logo.png" class="logo" />
     </header>
     <main id="main">
-      <div id="photographer-card"></div>
+      <div id="photographer_card_header"></div>
         <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-      </main>
+    </main>
+    <div class="lightbox"></div>
+    <div id="box"></div>
     <div id="contact_modal">
 			<div class="modal">
 				<header>
@@ -25,13 +27,20 @@
 					<div>
 						<label>Prénom</label>
 						<input />
+            <label>Nom</label>
+						<input />
+            <label>Prénom</label>
+						<input />
 					</div>
           <button class="contact_button">Envoyer</button>
 				</form>
 			</div>
 		</div>
-    <script src="./scripts/factories/webpage.js"></script>
-    <script src="./scripts/pages/photographer.js"></script>
+    <script src="./scripts/pages/photographer.js" defer></script>
+    <script src="./scripts/factories/personal_photographer.js" defer></script>
+    <script src="./scripts/factories/lightbox.js"></script>
+    <script src="./scripts/factories/menu.js"></script>
+    
     <script src="/scripts/utils/contactForm.js"></script>
   </body>
 </html>

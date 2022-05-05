@@ -1,32 +1,51 @@
-
-async function initPhotographer() {
-    // Récupère infos of all photograpehrs
-    const respone = await fetch('./data/photographers.json');
-    const photographers = respone.json();
+/*recouperation data photographers*/
+async function getPhotographers() {
+    const response = await fetch('./data/photographers.json');
+    const photographers = response.json();
     return photographers;
 }
 
-async function displaySite(photographers){
-    /*tutaj bedzie wstrzykiwany kod html et js w miejsce diva ktory jest juz w html z id phootgrapher-card*/
-    const photographerMain = document.getElementById("photographer-card");
+async function init() {
+    const photographeID = window.location.search.split("?").join("");
+    const { photographers } = await getPhotographers();
+    const photographer = photographers.find((p)=>{console.log(p.id)});
+    console.log(photographers);
+    console.log(photographeID);
+    displaySite(photographers);
+    displayLightbox(photographers);
+    displayMenu(photographers);
+};
+init();
+/*display site pour le photographe qui été choisi  comment passer id?*/
+ function displaySite(photographers){
+    const photographerMain = document.getElementById("photographer_card_header");
     photographers.forEach((photographer) => {
         const photographerPage = making_personal_website(photographer);
         const photographerCardDOM = photographerPage.photographerCardDOM();
         photographerMain.appendChild(photographerCardDOM)
     });
 }
-/*async function displayHeader(photograpehrs){
-    const photographerHead = document.getElementById("photo-head");
-    photographers.forEach((photographer)=>{
-        const photographerHeader = photographerFactoryHeader(photographer);
-        const photographerCardHead = photographerHeader.photographerCardHead();
-        photographerHeader.appendChild(photographerCardHead);
 
-    })
-}*/
-async function init() {
-    // Récupère les datas des photographes
-    const { photographers } = await initPhotographer();
-    displaySite(photographers);
- };
-init();
+/*une nouvelle factory pour ça?, pour chaque element?*/
+async function displayLightbox(photographers){
+    const lightbox = document.getElementsByClassName("lightbox");
+        const photographer_lightBox = making_personal_lightbox(photographers);
+        const lightboxCardDOM = photographer_lightBox.lightboxCardDOM();
+        lightbox.appendChild(lightboxCardDOM)
+    
+};
+ function displayMenu(photographer){
+     const menuBox = document.getElementById("box");
+     const menu = making_menu(photographer);
+     const menuCard = menu.menuCard();
+     menuBox.appendChild(menuCard)
+};
+ 
+/*
+function getPictures(){
+    fetch('./assets/photographers/').then((response)=>response.json())
+    .then((data)=>console.log(data))
+    .catch((error)=> console.log(error));
+}
+getPictures();
+*/
