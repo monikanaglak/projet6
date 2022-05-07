@@ -1,16 +1,16 @@
-function making_menu(photographer){
-    const wrapperMenu = document.createElement("div");
-    wrapperMenu.classList.add("boxdeux");
+function dropDown(photographer){
     function menuCard(){
+        const wrapperMenu = document.createElement("div");
+        wrapperMenu.classList.add("box-deux");
     const menuCard = `
         <div class="menu_dropdown">
             <p class="titre_menu">Trier par :</p>
             <div class="dropdown">
-                <div class="item one">Popularité</div>
-                <hr>
-                <div class="item two">Date</div>
-                <hr>
-                <div class="item three">Titre</div>
+                <options onclick="myFunction()" class="dropbtn" value="Popularité">Popularité</options>
+                <div id="myDropdown" class="dropdown-content">
+                    <options value="Data">Date</options>
+                    <options value="Titre">Titre</options>
+                </div>
             </div>
         </div>
                

@@ -20,7 +20,7 @@ function making_personal_website(photographer) {
                 <p>${tagline}</p>
             </div>
             <div class="button_contact">
-                <button class="contact_buttons" onclick="display-Modal()">Contactez-moi</button>
+                <button class="contact_buttons" onclick="displayModal()">Contactez-moi</button>
             </div>
             <div class="photographer_image">
                 <img src="${picture}"></img>

@@ -1,16 +1,17 @@
 
-function making_personal_lightbox(photographers) {
-    const wrapperLightbox = document.createElement("div");
-    wrapperLightbox.classList.add("photograph_lightbox");
-    function lightboxCardDOM(){
-    const lightboxCardDOM = `
-  <div class = "lightbox_wrapper">
-      <p>czemu nie dziala</p>
-  </div>`;
-   wrapperLightbox.innerHTML = lightboxCardDOM;
-   return wrapperLightbox;
+function showing_photos(photographer) {
+  const { name, portrait, city, country, tagline, price, id, alt} = photographer;
+    function photosCardDOM(){
+      const wrapperPhotos = document.createElement("div");
+      wrapperPhotos.classList.add("photosdeux");
+      const photosCardDOM = `
+        <div class = "wrapper_gallery">
+          <div class="gallery_show"></div>
+        </div>`;
+        wrapperPhotos.innerHTML = photosCardDOM;
+        return wrapperPhotos;
  }
- return {
-    lightboxCardDOM,
-  };
+        return {
+          photosCardDOM,
+        };
 }    

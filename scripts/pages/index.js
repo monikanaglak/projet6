@@ -1,4 +1,4 @@
-    
+       
     /*main page accueil, ajouter au dom card crée dans accueil js*/
     async function getPhotographers() {
         const response = await fetch('./data/photographers.json');
@@ -18,4 +18,6 @@
         displayData(photographers);
      };
     init();
+     
     
+     
