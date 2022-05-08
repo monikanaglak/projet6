@@ -9,8 +9,8 @@ function accueilFactory(photographer) {
         article.classList.add("photographer_section_cliked");
         article.classList.add(id);
         const accueilCardDOM = `
-        <div class="card_photographer ${id}">
-            <a href="./photographer.html?${id}">
+        <div class="card_photographer${id}">
+            <a href="./photographer.html?id=${id}">
                 <div class="card_image">
                     <img src="${picture}"></img>
                 </div>

@@ -6,7 +6,9 @@ function showing_photos(photographer) {
       wrapperPhotos.classList.add("photosdeux");
       const photosCardDOM = `
         <div class = "wrapper_gallery">
-          <div class="gallery_show"></div>
+          <div class="gallery_show">
+          <p>cos tu dziala?</p>
+          </div>
         </div>`;
         wrapperPhotos.innerHTML = photosCardDOM;
         return wrapperPhotos;
