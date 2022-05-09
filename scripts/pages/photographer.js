@@ -13,6 +13,7 @@ function displayHeader(photographers){
       photographerMain.appendChild(photographerCardDOM)
  });
 }
+
 /*function dropdown*/
 
 function displayMenu(photographer){
@@ -45,12 +46,20 @@ window.onclick = function(event) {
     }
   }
 }
+
 async function init() {
-  const photographeID = window.location.search.split("?").join("");
   const { photographers } = await getPhotographers();
- /* const photographer = photographers.find((p)=>{console.log(p.id)});*/
- console.log(photographeID)
-  displayHeader(photographers);
+  const photographeID = window.location.search;
+  const url_photographe = photographeID.slice(4);
+  console.log(photographeID);
+  console.log(url_photographe);
+  
+  /*const thomas = photographers.find((p)=>{console.log(p.id)});*/
+ 
+  const selected_photographer = photographers.filter(
+    (photographer) => photographer.id == url_photographe
+  );
+  displayHeader(selected_photographer);
   displayMenu(photographers);
   displayPhotos(photographers)
 };

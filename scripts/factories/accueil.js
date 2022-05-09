@@ -1,15 +1,14 @@
-
 /*to odcisk ktory tworzy sekcje dla kazdego fotografa na stronie glowniej*/
 
 function accueilFactory(photographer) {
-    const { name, portrait, city, country, tagline, price, id } = photographer;
-    const picture = `./assets/photographers/PhotographersPortrait/${portrait}`;
-    function accueilCardDOM() {
-        const article = document.createElement( 'article' );
-        article.classList.add("photographer_section_cliked");
-        article.classList.add(id);
-        const accueilCardDOM = `
-        <div class="card_photographer${id}">
+  const { id, name, portrait, city, country, tagline, price } = photographer;
+  const picture = `./assets/photographers/PhotographersPortrait/${portrait}`;
+  function accueilCardDOM() {
+    const article = document.createElement("article");
+    article.classList.add("photographer_section_cliked");
+    article.classList.add(id);
+    const accueilCardDOM = `
+        
             <a href="./photographer.html?id=${id}">
                 <div class="card_image">
                     <img src="${picture}"></img>
@@ -21,20 +20,18 @@ function accueilFactory(photographer) {
                     <p>${tagline}</p>
                     <p>${price}€/jour</^p>
                 </div>
-        </div>`;
-        article.innerHTML = accueilCardDOM;
-        return article;
-    }
-    return{
-        id,
-        picture,
-        name,
-        city,
-        country,
-        tagline,
-        price,
-        accueilCardDOM,
-    };
+        `;
+    article.innerHTML = accueilCardDOM;
+    return article;
+  }
+  return {
+    id,
+    picture,
+    name,
+    city,
+    country,
+    tagline,
+    price,
+    accueilCardDOM,
+  };
 }
-
-    

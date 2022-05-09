@@ -2,9 +2,10 @@
 
 
 function making_personal_website(photographer) {
-    const { name, portrait, city, country, tagline, price, id, alt} = photographer;
+    const { name, portrait, city, country, tagline, id, alt} = photographer;
     const picture = `./assets/photographers/PhotographersPortrait/${portrait}`;
-    const photos = `./assets/photographers/${photographer.id}`;
+    
+    
     
     function photographerCardDOM (){
     const wrapperHeader = document.createElement("div");
@@ -41,7 +42,6 @@ function making_personal_website(photographer) {
     tagline,
     alt,
     picture,
-    photos,
     photographerCardDOM,
   };
  }
