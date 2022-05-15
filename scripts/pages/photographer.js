@@ -4,7 +4,6 @@ async function getPhotographers() {
   const photographers = response.json();
   return photographers;
 }
-/*display site pour le photographe qui été choisi  comment passer id?*/
 function displayHeader(photographers){
   const photographerMain = document.getElementById("photographer_card_header");
   photographers.forEach((photographer) => {
@@ -23,12 +22,14 @@ function displayMenu(photographer){
    menuBox.appendChild(menuCard)
 };
 /*function for all boxes */
-function displayPhotos(photographer){
+function displayPhotos(photographers){
   const photosBox = document.getElementById("photos");
-  const box = showing_photos(photographer);
+  photographers.forEach((photographer) => {
+  const box = showing_photos(photographers);
   const photosCardDOM = box.photosCardDOM();
   photosBox.appendChild(photosCardDOM);
-};
+});
+}
 
 /*function for droping menu*/
 function myFunction() {
@@ -46,16 +47,21 @@ window.onclick = function(event) {
     }
   }
 }
+/*img.addEventListener("click", function(e) {
+  console.log(e.target.src);
+})
+target with image was clicked form working with images in javascript
+document.body.appendChild(img);
+*/
 
 async function init() {
   const { photographers } = await getPhotographers();
+ 
   const photographeID = window.location.search;
   const url_photographe = photographeID.slice(4);
-  console.log(photographeID);
   console.log(url_photographe);
   
   /*const thomas = photographers.find((p)=>{console.log(p.id)});*/
- 
   const selected_photographer = photographers.filter(
     (photographer) => photographer.id == url_photographe
   );

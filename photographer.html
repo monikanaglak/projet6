@@ -9,21 +9,22 @@
   </head>
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+      <img src="assets/images/logo.png" class="logo" role="button" />
     </header>
       <div class="container">
         <div id="photographer_card_header"></div>
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+      
+        <button class="contact_button" onclick="displayModal()" aria-label ="open_form">Contactez-moi</button>
         <!--Menu dropdown-->
-         <div id="menu_dropdown"></div>
+         <div id="menu_dropdown" aria-lable="openning menu"></div>
          <!--Boxes pour des images-->
-         <div id="photos"></div>
-         
-         <div id="contact_modal">
-			  <div class="modal">
+         <div id="photos" aria-lable="section photos"></div>
+         <div id="heart" aria-lable="heart for click and count likes"></div>
+         <div id="contact_modal" aria-label="section contact form">
+			  <div class="modal" aria-label="form">
 				<header>
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <img src="assets/icons/close.svg" onclick="closeModal()" aria-label="closing-form" />
         </header>
 				<form>
 					<div>
@@ -39,9 +40,11 @@
 			</div>
 		</div>
     <!----page-->
-    <script src="./scripts/pages/photographer.js" defer></script>
+    <script src="./scripts/pages/monika.js" defer></script>
+    <script src="./scripts/pages/test.js" type="module"></script>
     <!-----factories-->
     <script src="./scripts/factories/personal_photographer.js" defer></script>
+    <script src="./scripts/utils/like.js"></script>
     <script src="./scripts/factories/lightbox.js"></script>
     <script src="./scripts/factories/menu.js"></script>
     <source src="./scripts/factories/accueil.js"></script>

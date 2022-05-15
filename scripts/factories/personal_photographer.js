@@ -6,6 +6,8 @@ function making_personal_website(photographer) {
     const picture = `./assets/photographers/PhotographersPortrait/${portrait}`;
     
     
+
+    
     
     function photographerCardDOM (){
     const wrapperHeader = document.createElement("div");
@@ -25,7 +27,7 @@ function making_personal_website(photographer) {
             </div>
             <div class="photographer_image">
                 <img src="${picture}"></img>
-            </div>
+            </div> 
     </div>
      `;
     
