@@ -5,10 +5,6 @@ function making_personal_website(photographer) {
     const { name, portrait, city, country, tagline, id, alt} = photographer;
     const picture = `./assets/photographers/PhotographersPortrait/${portrait}`;
     
-    
-
-    
-    
     function photographerCardDOM (){
     const wrapperHeader = document.createElement("div");
     wrapperHeader.classList.add("photograph_header");

@@ -1,9 +1,10 @@
 
 function showing_photos(media, url_photographe) {
   const {photographerId, image, likes,} = media;
-  const all_pictures = `./assets/photographers/${url_photographe}`
+  const all_pictures = `./assets/photographers/${url_photographe}`;
   const pictures = `./assets/photographers/${url_photographe}/${image}`;
-  console.log(url_photographe)
+  console.log(all_pictures)
+  console.log(pictures)
     function photosCardDOM(){
       const wrapperPhotos = document.createElement("div");
       wrapperPhotos.classList.add("photosdeux");

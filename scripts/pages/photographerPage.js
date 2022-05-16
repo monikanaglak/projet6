@@ -24,10 +24,13 @@
         /*all media of photographer that was clicked found in json*/
         const selected_photographer_media = media.filter((media)=>media.photographerId == url_photographe);
         console.log(selected_photographer_media)
+        /*for each file make box?*/
+        selected_photographer_media.forEach((fotograf)=>{
         const box = showing_photos(media,url_photographe);
         const photosCardDOM = box.photosCardDOM();
         photosBox.appendChild(photosCardDOM);
-      }
+      })
+    }
     
 /*function dropdown menu*/
   function myFunction() {
