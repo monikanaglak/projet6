@@ -18,18 +18,27 @@
         const menuCard = menu.menuCard();
         menuBox.appendChild(menuCard)
        };
+
   function displayPhotos(media, url_photographe){
         const photosBox = document.getElementById("photos");
         /*const photographeinMedia = media.filter(x => x.id == 'url_photographe');*/
         /*all media of photographer that was clicked found in json*/
         const selected_photographer_media = media.filter((media)=>media.photographerId == url_photographe);
         console.log(selected_photographer_media)
+        selected_photographer_media.forEach(selected_photographer_media => {
+          for (let key in selected_photographer_media) {
+              console.log(`${key}: ${selected_photographer_media[key]}`);
+          }
+      });
         /*for each file make box?*/
         selected_photographer_media.forEach((fotograf)=>{
-        const box = showing_photos(media,url_photographe);
+          console.log(fotograf)
+        const box = showing_photos(fotograf.image,url_photographe);
         const photosCardDOM = box.photosCardDOM();
         photosBox.appendChild(photosCardDOM);
       })
+      console.log(selected_photographer_media)
+      console.log(media)
     }
     
 /*function dropdown menu*/
@@ -59,8 +68,6 @@
        const selected_photographer = photographers.filter(
       (photographer) => photographer.id == url_photographe
       );
-    
-
       displayHeader(selected_photographer);
       displayMenu(photographers);
       displayPhotos(media, url_photographe);

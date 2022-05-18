@@ -3,8 +3,8 @@
 }
 .logo{
     height: 50px;
-    width: 150px;
-    margin-left: 30px;
+    width: 180px;
+    margin-left:5vw;
     margin-top: 10px;
 }
 .container{
@@ -15,9 +15,8 @@
 }
 .container_header_photographer{
     display: flex;
-    justify-content: space-between;
-    border:2px solid red;
-    
+    justify-content: space-around;
+    align-items: center;
 }
 #photos{
     display: flex;
@@ -40,19 +39,21 @@
 }
 .wrapper_like{
     display: flex;
-    justify-content: flex-end;
-    margin-top: 220px;
+    margin-top: 180px;
+    margin-left: 180px;
 }
-#heart img{
+img{
     width: 30px;
     height: 30px;
+}
+#heart{
+    border:2px solid red;
 }
 #photographer_card_header {
     width: 90vw;
     margin: 0 10px;
-
     padding-top: 5px;
-    background-color:#f2f2f2;
+    background-color:#fafafa;
 }
 .photographer_info{
     display: flex;
@@ -60,7 +61,6 @@
     column-gap:2px;
     flex-wrap: wrap;
     width: 200px;
-
 }
 h2{
     color:#D3573C;
@@ -78,7 +78,6 @@ p{
     margin-top: -10px;
 }
 .contact_button {
-    
     display: none;
 }
 .contact_buttons {
@@ -95,7 +94,8 @@ p{
     margin: 80px;
 }
 .photographer_image{
-    padding-left: 100px;
+    padding-left: 150px;
+    
 }
 .photographer_image img{
     border-radius: 50%;

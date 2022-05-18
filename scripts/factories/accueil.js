@@ -17,7 +17,7 @@ function accueilFactory(photographer) {
                 <div class="card_infos">
                     <h2>${name}</h2>
                     <h3>${city}, ${country}</h3>
-                    <p>${tagline}</p>
+                    <p class="tagline">${tagline}</p>
                     <p>${price}€/jour</^p>
                 </div>
         `;
