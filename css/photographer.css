@@ -128,8 +128,6 @@ div.modal_media{
     color: #901C1C;
     text-align: center;
 }
-
-
 .lightbox_modal .controls {
     position: absolute;
     font-size: 40px;
@@ -138,7 +136,6 @@ div.modal_media{
     transform: translateY(-50%);
     cursor: pointer;
 }
-
 .lightbox_modal .control_btn {
     width: 100%;
 }
@@ -363,10 +360,23 @@ form input {
     padding-top: 80px;
 }
 .footer_box{
-    position:absolute;
-    margin-left:900px;
+    position:fixed;
+    bottom: 0;
+    left:1200px;
     width: 300px;
     height: 50px;
-    background-color: #901C1C;
-    color:white;
+    background-color:#D3573C;
+    
+}
+.footer_info{
+    border:2px solid green;
+}
+h3.titre_like{
+    color:black;
+    z-index: 8888;
+    background-color: #D3573C;
+}
+p.price_footer{
+    color:black;
+    z-index: 8888;
 }

@@ -1,14 +1,13 @@
-function footerFactory(media,selected_photographer,total){
-    const {price} = media;
-    console.log(total)
-    console.log(price)
-    function total_likes_DOM(){
+function footerFactory(photographer,selected_photographer,total){
+    const {price} = selected_photographer;
+
+    function total_likes_DOM(total){
     const wrapper_likes = document.createElement("div"); 
     wrapper_likes.classList.add("footer_box");
     const footerCard = `
-    <div class="container">
-          <h3 class="titre_like">Total Likes:${total}</h3>
-          <p>${price}/par jour</p>
+    <div class="footer_info">
+          <h3 class="titre_like">${total}</h3>
+          <p class="price_footer>${price}/par jour</p>
     </div>`;
     wrapper_likes.innerHTML= footerCard;
     return wrapper_likes;

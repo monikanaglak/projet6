@@ -36,11 +36,11 @@
   }
   function displayFooter(selected_photographer,total,media){
     const footer_container = document.querySelector('#likes');
-    const total_likes_model = footerFactory(likes);
-    const total_likes_DOM = total_likes_model.total_likes_DOM();
+    const total_likes_model = footerFactory(media,media);
+    const total_likes_DOM = total_likes_model.total_likes_DOM(total);
     footer_container.appendChild(total_likes_DOM);
-    /*footer_container.innerHTML=total;*/
-    
+    /*const monika = document.getElementsByClassName("titre_like h3")
+    monika.textContent=total;*/
   }
   
   function displayContactForm(selected_photographer) {
@@ -80,8 +80,9 @@
         const photographer_pictures = photographer_all_files.map((photographer_all_files) => photographer_all_files.image);
 
         const photographer_all_likes = photographer_all_files.map((photographer_all_files)=>photographer_all_files.likes);
+        
         let total = countingLikes(photographer_all_likes);
-        console.log(total)
+      
         displayHeader(selected_photographer);
         displayMenu(photographers);
         displayPhotos(media, url_photographe);
@@ -89,6 +90,8 @@
         AddClickHeart();
         countingLikes(photographer_all_likes);
         displayFooter(selected_photographer,total,media);
+        const monika = document.getElementsByClassName("titre_like h3")
+        console.log(monika.textContent)
         displayContactForm(selected_photographer);
         formularz();
         makingLightbox(photographer_pictures);
