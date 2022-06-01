@@ -18,30 +18,40 @@
         const menuCard = menu.menuCard();
         menuBox.appendChild(menuCard)
        };
-
+  
   function displayPhotos(media, url_photographe){
-        const photosBox = document.getElementById("photos");
-        /*const photographeinMedia = media.filter(x => x.id == 'url_photographe');*/
-        /*all media of photographer that was clicked found in json*/
+        const photosBox = document.getElementById("container_images");
         const selected_photographer_media = media.filter((media)=>media.photographerId == url_photographe);
-        console.log(selected_photographer_media)
-        selected_photographer_media.forEach(selected_photographer_media => {
-          for (let key in selected_photographer_media) {
-              console.log(`${key}: ${selected_photographer_media[key]}`);
-          }
-      });
-        /*for each file make box?*/
-        selected_photographer_media.forEach((fotograf)=>{
-          console.log(fotograf)
-        const box = showing_photos(fotograf.image,url_photographe);
+        selected_photographer_media.forEach((artiste)=>{
+        const box = showing_photos(artiste,url_photographe);
         const photosCardDOM = box.photosCardDOM();
         photosBox.appendChild(photosCardDOM);
       })
-      console.log(selected_photographer_media)
-      console.log(media)
-    }
+  }
+  function displayLightbox(){
+    const modalLightBox = document.querySelector(".lightbox_modal");
+    modalLightBox.innerHTML = "";
+    const LightBoxDOM = lightboxFactory();
+    modalLightBox.appendChild(LightBoxDOM);
+  }
+  function displayFooter(selected_photographer,total,media){
+    const footer_container = document.querySelector('#likes');
+    const total_likes_model = footerFactory(likes);
+    const total_likes_DOM = total_likes_model.total_likes_DOM();
+    footer_container.appendChild(total_likes_DOM);
+    /*footer_container.innerHTML=total;*/
     
-/*function dropdown menu*/
+  }
+  
+  function displayContactForm(selected_photographer) {
+    const cardFormSection = document.getElementById("contact_modal");
+     selected_photographer.forEach((fotograf) => {
+      const cardFormModel = contactFormFactory(fotograf);
+      const cardFormDOM = cardFormModel.contactFormDOM();
+      cardFormSection.appendChild(cardFormDOM);
+    });
+   };
+  
   function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
   }
@@ -57,21 +67,32 @@
         }
       }
     }
-  async function initPhotographers() {
+    async function initPhotographers() {
         const { photographers, media } = await fetchingPhotographers();
-        /*id of photographer*/
         const photographeID = window.location.search;
         const url_photographe = photographeID.slice(4);
-  
-  
-  /*const thomas = photographers.find((p)=>{console.log(p.id)});*/
-       const selected_photographer = photographers.filter(
-      (photographer) => photographer.id == url_photographe
-      );
-      displayHeader(selected_photographer);
-      displayMenu(photographers);
-      displayPhotos(media, url_photographe);
-     };
+
+        const selected_photographer = photographers.filter(
+        (photographer) => photographer.id == url_photographe
+        );
+        const photographer_all_files = media.filter((media)=>media.photographerId == url_photographe);
+
+        const photographer_pictures = photographer_all_files.map((photographer_all_files) => photographer_all_files.image);
+
+        const photographer_all_likes = photographer_all_files.map((photographer_all_files)=>photographer_all_files.likes);
+        let total = countingLikes(photographer_all_likes);
+        console.log(total)
+        displayHeader(selected_photographer);
+        displayMenu(photographers);
+        displayPhotos(media, url_photographe);
+        displayLightbox(photographer_pictures);
+        AddClickHeart();
+        countingLikes(photographer_all_likes);
+        displayFooter(selected_photographer,total,media);
+        displayContactForm(selected_photographer);
+        formularz();
+        makingLightbox(photographer_pictures);
+    };
     initPhotographers();
      
     

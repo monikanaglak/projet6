@@ -5,11 +5,11 @@ function dropDown(photographer){
     const menuCard = `
         <div class="menu_dropdown">
             <p class="titre_menu">Trier par :</p>
-            <div class="dropdown">
-                <options onclick="myFunction()" class="dropbtn" value="Popularité">Popularité</options>
-                <div id="myDropdown" class="dropdown-content">
-                    <options value="Data">Date</options>
-                    <options value="Titre">Titre</options>
+            <div class="dropdown switch">
+                <options onclick="myFunction()" class="dropbtn switch" value="Popularité" tabindex="0">Popularité</options>
+                <div id="myDropdown" class="dropdown-content switch">
+                    <options value="Data" tabindex="0" class="switch">Date</options>
+                    <options value="Titre" tabindex="0" class="switch">Titre</options>
                 </div>
             </div>
         </div>

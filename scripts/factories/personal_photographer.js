@@ -2,7 +2,7 @@
 
 
 function making_personal_website(photographer) {
-    const { name, portrait, city, country, tagline, id, alt} = photographer;
+    const { name, portrait, city, country, tagline, id, video,alt} = photographer;
     const picture = `./assets/photographers/PhotographersPortrait/${portrait}`;
     
     function photographerCardDOM (){
@@ -13,15 +13,15 @@ function making_personal_website(photographer) {
     <div class="container_header_photographer">
             <div class="photographer_info">
                 <div id="card${photographer.id}">
-                    <h2>${name}</h2>
+                    <h2 tabindex="0" class="switch">${name}</h2>
                 </div>
                 <h3>${city}, ${country}</h3>
                 <p>${tagline}</p>
             </div>
-            <div class="button_contact">
-                <button class="contact_buttons" onclick="displayModal()">Contactez-moi</button>
-            </div>
-            <div class="photographer_image">
+            
+            <button tabindex="2" type="button" class="contact_me contact_buttons">Contactez-moi</button>
+            
+            <div class="photographer_image switch" tabindex="0">
                 <img src="${picture}"></img>
             </div> 
     </div>
@@ -39,6 +39,7 @@ function making_personal_website(photographer) {
     country,
     tagline,
     alt,
+    video,
     picture,
     photographerCardDOM,
   };

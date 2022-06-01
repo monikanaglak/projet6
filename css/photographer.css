@@ -18,40 +18,47 @@
     justify-content: space-around;
     align-items: center;
 }
-#photos{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    max-width: 90vw;
-    margin: 0 auto;
-    border:3px solid green;
+#container_images{
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    justify-content: center;
+    align-content: center;
+    gap:40px;
 }
-.wrapper_gallery{
-    width: 100%;
-    height:400px;
+.photo_info{
     display: flex;
+    justify-content: space-between;
+    height: 50px;
+    text-align: center;
+    align-items: center;
 }
-.gallery_show{
-    width: 200px;
-    height: 200px;
-    border:2px solid red;
-    position: relative;
+.photo_title h3 {
+    font-size:18px;
+    font-weight: normal;
 }
 .wrapper_like{
     display: flex;
-    margin-top: 180px;
-    margin-left: 180px;
+    flex-direction: row;
 }
-img{
-    width: 30px;
-    height: 30px;
+
+h3.photograph-catalog-like {
+    font-size: 1.2em;
+    margin-right: 20px;
 }
-#heart{
-    border:2px solid red;
+.photo_clicked{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    
+}
+.medias_all{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
 }
 #photographer_card_header {
     width: 90vw;
-    margin: 0 10px;
+    margin: 0 auto;
     padding-top: 5px;
     background-color:#fafafa;
 }
@@ -71,16 +78,138 @@ h2{
 h3{
     color: #D3573C;
     font-size: 24px;
-    margin-top: -30px;
 }
 p{
     font-size: 16px;
     margin-top: -10px;
 }
+/************* lightbox***************/
+
+.lightbox_modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.8);
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index:999;
+}
+.lightbox_modal.active{
+    display: flex;
+}
+.modal_carrousel{
+    width: 90%;
+    height: 500px;
+    position:relative;
+    justify-content: center;
+    align-items: center;
+}
+div.modal_media{
+    display: flex;
+    height: 97%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.lightbox_modal .modal_media img,
+.lightbox_modal .modal_media video {
+    width: 90%;
+    height: 90%;
+    display: block;
+    object-fit: contain;
+    margin:auto;
+}
+
+.lightbox_modal h3 {
+    font-size: 1.2em;
+    color: #901C1C;
+    text-align: center;
+}
+
+
+.lightbox_modal .controls {
+    position: absolute;
+    font-size: 40px;
+    color: #901C1C;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.lightbox_modal .control_btn {
+    width: 100%;
+}
+
+.lightbox_modal .controls_left {
+    left: 10px;
+    border: 1px solid transparent;
+}
+
+.lightbox_modal .controls_right {
+    right: 10px;
+    border: 1px solid transparent;
+}
+
+.lightbox_modal .controls_right:hover,
+.lightbox_modal .controls_left:hover,
+.lightbox_modal .controls_right:focus,
+.lightbox_modal .controls_left:focus {
+    outline: none;
+    border: 1px solid #901C1C;
+}
+
+.lightbox_modal i {
+    padding: 0 20px;
+}
+
+.lightbox_modal i {
+    padding: 0 20px;
+}
+
+.lightbox_modal .modal_close_btn {
+    position: absolute;
+    top: 30px;
+    right: 15px;
+    font-size: 20px;
+    z-index: 400;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    padding: 2px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox_modal .modal_close_btn:hover,
+.lightbox_modal .modal_close_btn:focus {
+    background-color: #f2bdbd;
+    outline: none;
+    border: 2px solid #901C1C;
+}
+
+.lightbox_modal .modal_close_btn img {
+    color: #901C1C;
+    width: 70%;
+    height: 70%;
+}
+
+
+.card_lightbox{
+    width: 500px;
+    height: 500px;
+    border:5px solid white;
+}
 .contact_button {
     display: none;
 }
-.contact_buttons {
+.contact_buttons, .submitting_form {
     font-size: 20px;
     font-weight: bold;
     color: white;
@@ -93,9 +222,11 @@ p{
     cursor: pointer;
     margin: 80px;
 }
+.submitting_form{
+    margin:30px auto;
+}
 .photographer_image{
     padding-left: 150px;
-    
 }
 .photographer_image img{
     border-radius: 50%;
@@ -104,48 +235,44 @@ p{
     object-fit: cover;
     box-shadow: 0 0 0 0.5;
 }
-
+.contact_modal{
+    position: absolute;
+    top:10px;
+    margin:10px auto;
+    z-index: 999;
+}
 .modal {
     border-radius: 5px;
     background-color: #DB8876;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 35px;
-    margin: auto;
+    width:500px;
+    position: absolute;
+    top:10px;
+    left:25%;
 }
-
-.modal header {
-    justify-content: space-between;
-    width: 100%;
-    color:black;
+.modal-title img{
+    margin-left: 40px;
+    height: 30px;
 }
-
-.modal header img {
-    cursor: pointer;
+#contact_photograph{
+    width: 95%;
+    margin: 0 auto;
 }
-
-.modal header h2 {
-    font-size: 36px;
-    font-weight: normal;
-    text-align: center;
-    color:black;
+.close_form{
+    position: absolute;
+    height: 30px;
+    top:50px;
+    left:80%;
 }
-
 form {
     display: flex;
     width: 100%;
     flex-direction: column;
     align-items: flex-start;
 }
-
 form label {
     color: #312E2E;
     font-size: 36px;
 }
-
 form div {
     display: flex;
     flex-direction: column;
@@ -153,13 +280,13 @@ form div {
     align-items: self-start;
     margin-bottom: 26px;
 }
-
 form input {
     width: 100%;
     height: 68px;
     border: none;
     border-radius: 5px;
 }
+
 
 .menu_dropdown{
     display: flex;
@@ -173,7 +300,6 @@ form input {
     font-size: 20px;
     font-weight: bolder;
     margin:auto 0;
-    
 }
 .dropbtn{
     background-color: #901C1C;
@@ -216,7 +342,8 @@ form input {
     text-align: center;
   }
   
-  .show {display: block;
+  .show {
+    display: block;
     background-color: #901C1C;
     display: flex;
     flex-direction: column;
@@ -234,5 +361,12 @@ form input {
     max-width: 1400px;
     margin:0 auto;
     padding-top: 80px;
-    border:2px solid green;
+}
+.footer_box{
+    position:absolute;
+    margin-left:900px;
+    width: 300px;
+    height: 50px;
+    background-color: #901C1C;
+    color:white;
 }
