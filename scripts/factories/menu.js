@@ -1,17 +1,16 @@
 function dropDown(photographer){
     function menuCard(){
         const wrapperMenu = document.createElement("div");
-        wrapperMenu.classList.add("box-deux");
+        wrapperMenu.classList.add("filter_images");
     const menuCard = `
         <div class="menu_dropdown">
-            <p class="titre_menu">Trier par :</p>
-            <div class="dropdown switch">
-                <options onclick="myFunction()" class="dropbtn switch" value="Popularité" tabindex="0">Popularité</options>
-                <div id="myDropdown" class="dropdown-content switch">
-                    <options value="Data" tabindex="0" class="switch">Date</options>
-                    <options value="Titre" tabindex="0" class="switch">Titre</options>
-                </div>
-            </div>
+            <label for="select_images" id="sort">Trier par</label>
+            <select id="select_images" data-trigger="select" tabindex="0" >
+                <option value="popularity">Popularité</option>
+                <option value="date">Date</option>
+                <option value="title">Titre</option>
+            </select>
+            <i class="fas fa-chevron-down arrow-down"></i>
         </div>
                
     `;

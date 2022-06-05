@@ -16,7 +16,7 @@ function lightboxFactory(){
       modalLightBox.appendChild(modalMediaDiv);
     }
   
-    // Boutons de navigation
+    
     let lightboxCardDOM  = `<a href="#" class="controls controls_left">
     <div role="button" class="control_btn" >
       <span class="img prev_image" >

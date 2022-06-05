@@ -1,6 +1,5 @@
 function formularz() {
   const firstName = document.getElementById("first_name");
-  console.log(firstName);
   const lastName = document.getElementById("last_name");
   const email = document.getElementById("email");
   const textMessage = document.getElementById("your_message");
@@ -12,7 +11,7 @@ function formularz() {
   const emailError = document.querySelector(".email_error");
   const textMessageError = document.querySelector(".your_message_error");
 
-  // Bouton d'ouverture de la popup
+  
   const ContactButton = document.querySelector(".contact_buttons");
 
   // Lorsqu'on ouvre le formulaire de contact, on met le focus dessus et on désactive la tabulation sur tout le reste du site
@@ -32,43 +31,13 @@ function formularz() {
   elements_change.forEach((el)=>{
     el.setAttribute("tabIndex","-1");
   })
- /*****to remove?*********************** */ 
-/*
-    document.querySelector("header a").setAttribute("tabIndex", "-1");
-    document.querySelector(".photograph-name").setAttribute("tabIndex", "-1");
-    document.querySelector(".photograph-txt").setAttribute("tabIndex", "-1");
-    document.querySelector(".contact_me").setAttribute("tabIndex", "-1");
-    document.querySelector(".photograph-img").setAttribute("tabIndex", "-1");
-    document.querySelector(".likes-price").setAttribute("tabIndex", "-1");
-    document.querySelector("#sort").setAttribute("tabIndex", "-1");
-    document.querySelector("#select_images").setAttribute("tabIndex", "-1");
 
-    const imageSelected = document.querySelectorAll(".media_link");
-    const imageTxt = document.querySelectorAll(".photograph-catalog-txt");
-    const imageLike = document.querySelectorAll(".photograph-catalog-icon");
-    const imageLikeHeart = document.querySelectorAll(".like_img");
-
-    for (let i = 0; i < imageSelected.length; i++) {
-      imageSelected[i].setAttribute("tabIndex", "-1");
-      imageTxt[i].setAttribute("tabIndex", "-1");
-      imageLike[i].setAttribute("tabIndex", "-1");
-      imageLikeHeart[i].setAttribute("tabIndex", "-1");
-    }
-
-    const videoCatalog = document.querySelectorAll(".card_video");
-    for (let i = 0; i < videoCatalog.length; i++) {
-      videoCatalog[i].setAttribute("tabIndex", "-1");
-    }
-
-    modalTitle.focus();
-  });
-*/
-modalTitle.focus();
+   modalTitle.focus();
   
-  const closeForm = document.querySelector(".close_form");
+    const closeForm = document.querySelector(".close_form");
 
   // A la fermeture de la popup, on remet tous les attributs de navigation au clavier par défaut
-  closeForm.addEventListener("click", () => {
+    closeForm.addEventListener("click", () => {
     const bodyDiv = document.querySelector("body");
     const MainDiv = document.getElementById("main");
     const contactModal = document.getElementById("contact_modal");
@@ -86,40 +55,12 @@ modalTitle.focus();
   
    enableTabindexForm()
   // Fonction qui réinitialise toute la navigation au clavier
-  function enableTabindexForm() {/*
-    document.querySelector(".photograph-name").setAttribute("tabIndex", "2");
-    document.querySelector(".photograph-txt").setAttribute("tabIndex", "2");
-    document.querySelector(".contact_me").setAttribute("tabIndex", "2");
-    document.querySelector(".photograph-img").setAttribute("tabIndex", "2");
-    document.querySelector(".likes-price").setAttribute("tabIndex", "2");
-    document.querySelector("#sort").setAttribute("tabIndex", "0");
-    document.querySelector("#select_images").setAttribute("tabIndex", "0");
-
-    const imageSelected = document.querySelectorAll(".media_link");
-    const imageTxt = document.querySelectorAll(".photograph-catalog-txt");
-    const imageLike = document.querySelectorAll(".photograph-catalog-icon");
-    const imageLikeHeart = document.querySelectorAll(".like_img");
-
-    for (let i = 0; i < imageSelected.length; i++) {
-      imageSelected[i].setAttribute("tabIndex", "0");
-      imageTxt[i].setAttribute("tabIndex", "0");
-      imageLike[i].setAttribute("tabIndex", "0");
-      imageLikeHeart[i].setAttribute("tabIndex", "0");
-    }
-
-    const videoCatalog = document.querySelectorAll(".card_video");
-    for (let i = 0; i < videoCatalog.length; i++) {
-      videoCatalog[i].removeAttribute("tabIndex", "-1");
-    }*/
-
+  function enableTabindexForm() {
     let removing_reset = document.querySelectorAll(".switch");
     removing_reset.forEach((rem)=>{
       rem.setAttribute("tabIndex","0");
     })
   }
-  /*** ask why tabindex2?  */
- 
-
   // Suppression des messages d'erreur au focus
   firstName.addEventListener("focus", () => {
     firstNameError.style.display = "none";

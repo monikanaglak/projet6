@@ -29,35 +29,6 @@ function makingLightbox(photographer_pictures){
         elements_change.forEach((el)=>{
         el.setAttribute("tabIndex","-1");
         })
-        /*
-        // disable tabindex for other divs outside form
-        document.querySelector("header a").setAttribute("tabIndex", "-1"); //disable tabindex logo
-        document.querySelector(".photograph-name").setAttribute("tabIndex", "-1"); //disable tabindex photogaph name header
-        document.querySelector(".photograph-txt").setAttribute("tabIndex", "-1"); //disable tabindex photogaph city and tagline header
-        document.querySelector(".contact_me").setAttribute("tabIndex", "-1"); //disable tabindex contact button header
-        document.querySelector(".photograph-img").setAttribute("tabIndex", "-1"); //disable tabindex image photographer header
-        document.querySelector(".likes-price").setAttribute("tabIndex", "-1"); //disable tabindex footer likes
-        document.querySelector("#sort").setAttribute("tabIndex", "-1"); //disable tabindex sort by text
-        document.querySelector("#select_images").setAttribute("tabIndex", "-1"); //disable tabindex sort button
-  
-        const imageSelected = document.querySelectorAll(".media_link"); //select tabindex medias catalog
-        const imageTxt = document.querySelectorAll(".photograph-catalog-txt"); //select tabindex medias catalog title
-        const imageLike = document.querySelectorAll(".photograph-catalog-icon"); //select tabindex medias catalog like number
-        const imageLikeHeart = document.querySelectorAll(".like_img"); //select tabindex medias catalog like heart icon
-  
-        for (let i = 0; i < imageSelected.length; i++) {
-          imageSelected[i].setAttribute("tabIndex", "-1"); //disable tabindex medias catalog
-          imageTxt[i].setAttribute("tabIndex", "-1"); //disable tabindex medias catalog title
-          imageLike[i].setAttribute("tabIndex", "-1"); //disable tabindex medias catalog like number
-          imageLikeHeart[i].setAttribute("tabIndex", "-1"); //disable tabindex medias catalog like heart icon
-        }
-  
-        //disable tabindex video catalog
-        const videoCatalog = document.querySelectorAll(".media_link .card_video");
-        for (let i = 0; i < videoCatalog.length; i++) {
-          videoCatalog[i].setAttribute("tabIndex", "-1");
-        }
-        */
         //focus to image selected inside to lightbox
         const modalMediaTab = document.querySelectorAll(".modal_media");
         for (let i = 0; i < modalMediaTab.length; i++) {
@@ -67,8 +38,6 @@ function makingLightbox(photographer_pictures){
         }
       });
     }
-  
-    // navigation with arrow keys <>
     document.addEventListener("keydown", (e) => {
       if (e.code === "ArrowLeft") {
         plusSlides(-1);
@@ -77,7 +46,7 @@ function makingLightbox(photographer_pictures){
       }
     });
   
-    //controls lightbox prev/next <> click
+    
     const linkPrevLightBox = document.querySelector(".prev_image");
     linkPrevLightBox.addEventListener("click", (event) => {
       event.preventDefault();
@@ -88,7 +57,7 @@ function makingLightbox(photographer_pictures){
       event.preventDefault();
       plusSlides(1);
     });
-    //controls lightbox prev/next <> enter
+    
     const linkPrevEnterLightBox = document.querySelector(".controls_left");
     linkPrevEnterLightBox.addEventListener("keydown", (e) => {
       if (e.code === "Enter") {
@@ -104,20 +73,18 @@ function makingLightbox(photographer_pictures){
       }
     });
   
-    let getIndexMediaModal; //get value of media modal
-  
-    // animation of lightbox
+    let getIndexMediaModal; 
     let slideIndex = 1;
     showSlides(slideIndex);
   
     function plusSlides(n) {
       showSlides((slideIndex += n));
-      getIndexMediaModal = slideIndex; //get value of position media modal
+      getIndexMediaModal = slideIndex; 
     }
   
     function currentSlide(n) {
       showSlides((slideIndex = n));
-      getIndexMediaModal = slideIndex; //get value of position media modal
+      getIndexMediaModal = slideIndex; 
     }
   
     function showSlides(n) {
@@ -144,41 +111,18 @@ function makingLightbox(photographer_pictures){
       modalLightBox.style.display = "none";
       MainDiv.setAttribute("aria-hidden", "false");
       modalLightBox.setAttribute("aria-hidden", "true");
-      bodyDiv.classList.remove("no-scroll");
+      body_div.classList.remove("no-scroll");
   
-      const lastMediaModal = document.querySelectorAll(".media_link"); //select last media modal
+      const lastMediaModal = document.querySelectorAll(".media_link");
       lastMediaModal[getIndexMediaModal - 1].focus();
       enableTabindexLightbox();
     });
   
     function enableTabindexLightbox() {
-      // enable tabindex for other divs outside form
-      document.querySelector("header a").setAttribute("tabIndex", "1"); //enable tabindex logo
-      document.querySelector(".photograph-name").setAttribute("tabIndex", "2"); //enable tabindex photogaph name header
-      document.querySelector(".photograph-txt").setAttribute("tabIndex", "2"); //enable tabindex photogaph city and tagline header
-      document.querySelector(".contact_me").setAttribute("tabIndex", "2"); //enable tabindex contact button header
-      document.querySelector(".photograph-img").setAttribute("tabIndex", "2"); //enable tabindex image photographer header
-      document.querySelector(".likes-price").setAttribute("tabIndex", "2"); //enable tabindex footer likes
-      document.querySelector("#sort").setAttribute("tabIndex", "0"); //enable tabindex sort by text
-      document.querySelector("#select_images").setAttribute("tabIndex", "0"); //enable tabindex sort button
-  
-      const imageSelected = document.querySelectorAll(".media_link"); //select tabindex medias catalog
-      const imageTxt = document.querySelectorAll(".photograph-catalog-txt"); //select tabindex medias catalog title
-      const imageLike = document.querySelectorAll(".photograph-catalog-icon"); //select tabindex medias catalog like number
-      const imageLikeHeart = document.querySelectorAll(".like_img"); //select tabindex medias catalog like heart icon
-  
-      for (let i = 0; i < imageSelected.length; i++) {
-        imageSelected[i].setAttribute("tabIndex", "0"); //enable tabindex medias catalog
-        imageTxt[i].setAttribute("tabIndex", "0"); //enable tabindex medias catalog title
-        imageLike[i].setAttribute("tabIndex", "0"); //enable tabindex medias catalog like number
-        imageLikeHeart[i].setAttribute("tabIndex", "0"); //enable tabindex medias catalog like heart icon
-      }
-  
-      //enable tabindex video catalog
-      const videoCatalog = document.querySelectorAll(".media_link .card_video");
-      for (let i = 0; i < videoCatalog.length; i++) {
-        videoCatalog[i].removeAttribute("tabIndex", "-1");
-      }
+      let elements_rechange= document.querySelectorAll(".switch");
+        elements_rechange.forEach((el)=>{
+        el.setAttribute("tabIndex","0");
+        })
     }
   }
   

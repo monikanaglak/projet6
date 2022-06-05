@@ -19,7 +19,7 @@ function making_personal_website(photographer) {
                 <p>${tagline}</p>
             </div>
             
-            <button tabindex="2" type="button" class="contact_me contact_buttons">Contactez-moi</button>
+            <button tabindex="0" type="button" class="contact_me contact_buttons">Contactez-moi</button>
             
             <div class="photographer_image switch" tabindex="0">
                 <img src="${picture}"></img>

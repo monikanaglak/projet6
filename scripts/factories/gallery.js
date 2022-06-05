@@ -19,7 +19,7 @@ function showing_photos(media, url_photographe) {
       photosCardDOM += `
       </a>
       <div class="photo_info">
-        <div class="photo_title switch" tabindex="0">
+        <div class="photo_title switch">
           <h3>${title}</h3>
         </div>
         <div class="wrapper_like">

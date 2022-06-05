@@ -4,6 +4,7 @@ function countingLikes(photographer_all_likes){
       for(let i=0; i<all_likes.length; i++){
           total += all_likes[i];
     }
+    
     return total;
     
 };

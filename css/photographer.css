@@ -380,3 +380,83 @@ p.price_footer{
     color:black;
     z-index: 8888;
 }
+i.arrow-down{
+    position:absolute;
+    top:10;
+    border:2px solid red;
+
+}
+/* select dropdown 
+**
+*/
+#menu_dropdown {
+    display: inline-flex;
+    position: relative;
+    margin-top: 10px;
+    font-size: 1.125em;
+}
+
+#menu_dropdown .filter_images{
+    display: block;
+}
+
+#menu_dropdown label {
+    margin: 0;
+    padding: 0;
+    margin-right: 20px;
+    font-weight: 700;
+}
+
+#menu_dropdown select {
+    width: 170px;
+    height: 70px;
+    font-weight: bold;
+    color: white;
+    padding: 11px 15px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+    text-indent: 1px;
+    outline: none;
+
+    /* hide arrow selector  */
+    appearance: none;
+
+}
+
+#menu_dropdown select:hover,
+#menu_dropdown select:focus {
+    color: #000;
+    background-color: #db8876;
+}
+
+#menu_dropdown select:not(:focus) {
+    color: #fff;
+    background-color: #901C1C;
+}
+
+#menu_dropdown option {
+    line-height: 30px;
+    background-color: #901C1C;
+    position: absolute;
+    top: 0;
+    left: 50px;
+    outline: none;
+    color: #fff;
+}
+
+#menu_dropdown i {
+    position: absolute;
+    top: 25px;
+    right: 15px;
+    color: white;
+    font-size: 1.125em;
+    pointer-events: none;
+
+}
+
+/* rotation button sort popularity/date/title  */
+.rotated {
+    transform: rotate(180deg);
+}
