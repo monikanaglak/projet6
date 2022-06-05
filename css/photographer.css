@@ -380,12 +380,7 @@ p.price_footer{
     color:black;
     z-index: 8888;
 }
-i.arrow-down{
-    position:absolute;
-    top:10;
-    border:2px solid red;
 
-}
 /* select dropdown 
 **
 */

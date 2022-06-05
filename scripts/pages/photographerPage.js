@@ -84,14 +84,14 @@ let mediasphotographerFiltered = mediasphotographer;
     modalLightBox.appendChild(LightBoxDOM);
   }
 
-  /*function displayFooter(url_photographe,total,photographers){
+  function displayFooter(url_photographe,total,photographers){
     const footer_container = document.querySelector('#likes');
     console.log(url_photographe);
     
     const total_likes_model = footerFactory(photographers,url_photographe,total);
     const total_likes_DOM = total_likes_model.total_likes_DOM(total);
     footer_container.appendChild(total_likes_DOM);
-  }*/
+  }
   
   function displayContactForm(selected_photographer) {
     const cardFormSection = document.getElementById("contact_modal");
@@ -125,7 +125,7 @@ let mediasphotographerFiltered = mediasphotographer;
         displayLightbox(photographer_pictures);
         AddClickHeart();
         countingLikes(photographer_all_likes);
-        /*displayFooter(url_photographe,total,photographers);*/
+        displayFooter(url_photographe,total,photographers);
       
         displayContactForm(selected_photographer);
         formularz();
