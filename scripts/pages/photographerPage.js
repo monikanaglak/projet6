@@ -46,15 +46,12 @@ let mediasphotographerFiltered = mediasphotographer;
   }
   */
   function displayPhotos(media, url_photographe,filter_by){
+    console.log("filtre choisi " + filter_by)
         const photosBox = document.getElementById("container_images");
         const selected_photographer_media = media.filter((media)=>media.photographerId == url_photographe);
-        console.log(filter_by)
         let mediasphotographerFiltered = selected_photographer_media;
         if (filter_by === "popularity") {
-          console.log(selected_photographer_media)
           mediasphotographerFiltered = selected_photographer_media.sort((a, b) => {
-            console.log(a)
-            console.log(b)
             return a.likes > b.likes;
           });
         }
@@ -134,23 +131,23 @@ let mediasphotographerFiltered = mediasphotographer;
         formularz();
         makingLightbox(photographer_pictures);
         const sortByType = document.getElementById("select_images");
-        sortByType.addEventListener("click", () => {
+        console.log(sortByType);
+        sortByType.addEventListener("change", () => {
         const arrowUpDown = document.querySelector(".arrow-down");
         arrowUpDown.classList.toggle("rotated");
         });
 
-      // Fonctionnement du tri
+      // Fonctionnement du tri evenement change est pour select utiliser
       sortByType.addEventListener("change", (e) => {
         if (e.target.value === "popularity") {
-          console.log("populairty")
+          console.log(e.target.value)
           displayPhotos(media,url_photographe,"popularity");
         }
         if (e.target.value === "date") {
-          console.log("date")
+          console.log(e.target.value)
           displayPhotos(media,url_photographe, "date");
         }
         if (e.target.value === "title") {
-          console.log("title")
           displayPhotos(media,url_photographe,"title");
         }
       });
