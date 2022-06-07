@@ -23,7 +23,7 @@ function contactFormFactory(data){
   
             <label for="last_name">Nom</label>
             <input type="text" name="last_name" id="last_name" aria-required="true" minlength="2" tabindex="0"/>
-            <p class="last_name_error error_msn hide"></p>
+            <p class="last_name_error error_msn"></p>
   
             <label for="email">Email</label>
             <input type="email" name="email" id="email" aria-required="true" tabindex="0"/>
@@ -33,7 +33,7 @@ function contactFormFactory(data){
             <textarea id="your_message" name="message" aria-required="true" tabindex="0" rows="10" cols="50"></textarea>
             <p class="your_message_error error_msn hide"></p>
           </div>
-          <button class="submitting_form" type="submit" tabindex="0">Envoyer</button>
+          <button class="submitting_form" type="submit" tabindex="0" id="test" disabled="disabled">Envoyer</button>
         
         </form>
         

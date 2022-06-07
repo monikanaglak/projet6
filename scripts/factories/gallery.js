@@ -7,7 +7,7 @@ function showing_photos(media, url_photographe) {
       const wrapperPhotos = document.createElement("div");
       wrapperPhotos.classList.add("photo_clicked");
       let photosCardDOM = 
-       `<a href ="#" class="media_link switch" data-mediaid=${id}  role="button" aria-label="${alt}" tabindex = "0" >`;
+       `<a href ="#" class="media_link switch" data-mediaid="${id}"  role="button" aria-label="${alt}" tabindex = "0" >`;
       if (video !== undefined) {
         photosCardDOM += `<video class="card_video medias_all switch" aria-label="${alt}" controls>
         <source src="${videos}" type="video/mp4">
@@ -33,9 +33,9 @@ function showing_photos(media, url_photographe) {
   }
   return {
     id,
-    video,
-    title,
     image,
+    title,
+    video,
     likes,
     date,
     price,
