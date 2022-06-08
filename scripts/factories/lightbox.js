@@ -1,6 +1,5 @@
 function lightboxFactory(){
     const modalLightBox = document.createElement("article");
-    /* modal carousel to rama gdzie bedzie slider*/
     modalLightBox.classList.add("modal_carrousel");
     const modalMediaDiv = document.createElement("div");
     modalMediaDiv.classList.add("modal_media");

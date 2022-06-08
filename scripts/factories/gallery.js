@@ -1,8 +1,8 @@
 
-function showing_photos(media, url_photographe) {
-  const {id,image,title,video,price,likes,date,alt} = media;
-  const pictures = `./assets/photographers/${url_photographe}/${image}`;
-  const videos = `./assets/photographers/${url_photographe}/${video}`;
+function showing_photos(media) {
+  const {id,photographerId,image,title,video,price,likes,date,alt} = media;
+  const pictures = `./assets/photographers/${photographerId}/${image}`;
+  const videos = `./assets/photographers/${photographerId}/${video}`;
     function photosCardDOM(){
       const wrapperPhotos = document.createElement("div");
       wrapperPhotos.classList.add("photo_clicked");
@@ -33,6 +33,7 @@ function showing_photos(media, url_photographe) {
   }
   return {
     id,
+    photographerId,
     image,
     title,
     video,

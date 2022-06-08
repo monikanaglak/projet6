@@ -1,7 +1,7 @@
 
 
 
-function making_personal_website(photographer) {
+function making_header(photographer) {
     const { name, portrait, city, country, tagline, id,alt} = photographer;
     const picture = `./assets/photographers/PhotographersPortrait/${portrait}`;
     
