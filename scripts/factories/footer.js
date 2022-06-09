@@ -1,5 +1,6 @@
-function footerFactory(photographers,url_photographe,total){
-    const {price} = photographers;
+function footerFactory(photographer,total){
+    const {price} = photographer;
+    
 
     function total_likes_DOM(total){
     const wrapper_likes = document.createElement("div"); 

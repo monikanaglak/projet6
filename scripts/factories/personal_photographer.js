@@ -1,8 +1,8 @@
 
 
 
-function making_header(photographer) {
-    const { name, portrait, city, country, tagline, id,alt} = photographer;
+function making_header(photographer,total) {
+    const { name, portrait, city, country, tagline, id,alt,price} = photographer;
     const picture = `./assets/photographers/PhotographersPortrait/${portrait}`;
     
     function photographerCardDOM (){
@@ -25,6 +25,13 @@ function making_header(photographer) {
                 <img src="${picture}"></img>
             </div> 
     </div>
+    <div class="footer">
+       <div class="footer_info">
+            <h3 class="titre_like">${total}<h3>
+            <span><i class="fas fa-heart heart switch" tabindex="0" aria-label="likes" role="button"></i></span>
+        </div>
+        <h3 class="footer_price">${price} /jour</h3>
+    </div>
      `;
     
     wrapperHeader.innerHTML = photographerCardDOM;
@@ -36,10 +43,12 @@ function making_header(photographer) {
     name,
     portrait,
     city,
+    total,
     country,
     tagline,
     alt,
     picture,
+    price,
     photographerCardDOM,
   };
  }

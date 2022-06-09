@@ -5,10 +5,10 @@
         return photographers;
     }
   /*function injection header pour chaque photographe*/
-  function displayHeader(photographers){
+  function displayHeader(photographers,total){
         const photographerMain = document.getElementById("photographer_card_header");
         photographers.forEach((photographer) => {
-        const photographerPage = making_header(photographer);
+        const photographerPage = making_header(photographer,total);
         const photographerCardDOM = photographerPage.photographerCardDOM();
         photographerMain.appendChild(photographerCardDOM)
        });
@@ -77,12 +77,13 @@
     modalLightBox.appendChild(LightBoxDOM);
   }
 
-  function displayFooter(url_photographe,total,photographers){
+  /*function displayFooter(photographers){
     const footer_container = document.querySelector('#likes');
-    const total_likes_model = footerFactory(photographers,url_photographe,total);
-    const total_likes_DOM = total_likes_model.total_likes_DOM(total);
+    photographers.forEach((ph)=>{
+    const total_likes_model = footerFactory(ph,total);
+    const total_likes_DOM = total_likes_model.total_likes_DOM();
     footer_container.appendChild(total_likes_DOM);
-  }
+  })*/
   
   
   async function initPhotographers() {
@@ -101,12 +102,12 @@
 
         let total = countingLikes(photographer_all_likes);
         
-        displayHeader(selected_photographer);
+        displayHeader(selected_photographer,total);
         displayMenu(photographers);
         displayPhotos(media,photographer_all_files,"popularity");
         displayLightbox(photographer_pictures);
         
-       displayFooter(url_photographe,total,photographers);
+       /*displayFooter(photographers,total);*/
       
         displayContactForm(selected_photographer);
         formularz();

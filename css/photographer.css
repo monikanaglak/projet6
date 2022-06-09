@@ -328,22 +328,26 @@ form input {
     text-align: center;
   }
   /*ooter*/
-.footer_box{
+.footer{
     position:fixed;
+    display: flex;
+    align-items: center;
     bottom: 0;
     left:1200px;
     width: 300px;
     height: 50px;
     background-color:#D3573C;
 }
-
-h3.titre_like{
+h3{
     color:black;
     z-index: 8888;
-    background-color: #D3573C;
 }
-p.price_footer{
+.footer_info{
+    display: flex;
+}
+h3.footer_price{
     color:black;
+    margin-left: 130px;
     z-index: 8888;
 }
 
