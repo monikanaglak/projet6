@@ -114,11 +114,12 @@
 		{
 			"id": 8328953,
 			"photographerId": 82,
-			"title": "Wooden sculpture of a horse",
-			"image": "Art_Triangle_Man.jpg",
+			"title": "Wooden Horse",
+			"video": "Art_Wooden_Horse_Sculpture.mp4",
 			"likes": 24,
 			"date": "2011-12-08",
-			"price": 100
+			"price": 100,
+			"alt": "Une sculpture cheval en bois"
 		  },
 		{
 			"id": 7502053,

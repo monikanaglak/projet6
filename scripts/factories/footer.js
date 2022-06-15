@@ -1,4 +1,4 @@
-function footerFactory(photographer,total){
+/*function footerFactory(photographer,total){
     const {price} = photographer;
     
 
@@ -18,4 +18,4 @@ return{
     total,
     total_likes_DOM,
 }
-}
+}*/

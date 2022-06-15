@@ -327,7 +327,7 @@ form input {
     overflow: hidden;
     text-align: center;
   }
-  /*ooter*/
+  /*footer*/
 .footer{
     position:fixed;
     display: flex;
@@ -375,18 +375,14 @@ h3.footer_price{
     width: 170px;
     height: 70px;
     font-weight: bold;
-    color: white;
-    padding: 11px 15px;
+    color:white;
+    padding: 15px 15px;
     border: none;
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
     text-indent: 1px;
     outline: none;
-
-    /* hide arrow selector  */
-    appearance: none;
-
 }
 
 #menu_dropdown select:hover,
@@ -399,7 +395,7 @@ h3.footer_price{
     color: #fff;
     background-color: #901C1C;
 }
-
+/*
 #menu_dropdown option {
     line-height: 30px;
     background-color: #901C1C;
@@ -408,19 +404,14 @@ h3.footer_price{
     left: 50px;
     outline: none;
     color: #fff;
-}
+    
+}*/
 
 #menu_dropdown i {
     position: absolute;
-    top: 25px;
-    right: 15px;
-    color: white;
-    font-size: 1.125em;
+    top: 10px;
+    right: 5px;
+    color:white;
+    font-size: 2em;
     pointer-events: none;
-
-}
-
-/* rotation button sort popularity/date/title  */
-.rotated {
-    transform: rotate(180deg);
 }

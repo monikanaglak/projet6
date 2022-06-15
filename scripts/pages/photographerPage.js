@@ -1,4 +1,4 @@
-  /*fetching data des photographers*/
+  /*fetching data the photographers*/
   async function fetchingPhotographers() {
         const response = await fetch('./data/photographers.json');
         const photographers = response.json();
@@ -20,7 +20,7 @@
         const menuCard = menu.menuCard();
         menuBox.appendChild(menuCard)
   };
-
+  /*function form display*/
   function displayContactForm(selected_photographer) {
     const cardFormSection = document.getElementById("contact_modal");
      selected_photographer.forEach((fotograf) => {
@@ -29,12 +29,10 @@
       cardFormSection.appendChild(cardFormDOM);
     });
    }; 
-
+   /*function display photos with choice of user*/
    function displayPhotos(media,photographer_all_files,filterBy){
         console.log(photographer_all_files)
         const wrapper_images = document.getElementById("container_images");
-        /*const selected_photographer_media = media.filter((media)=>media.photographerId == url_photographe);*/
-        
         let mediasphotographerFiltered = photographer_all_files;
         if (filterBy === "popularity") {
           mediasphotographerFiltered = photographer_all_files.sort((a, b) => {
@@ -42,13 +40,11 @@
          });
         }
         if (filterBy === "title") {
-          
           mediasphotographerFiltered = photographer_all_files.sort((a, b) => {
             
             let fa = a.title.toLowerCase(),
                 fb = b.title.toLowerCase();
             if (fa < fb) {
-              console.log(mediasphotographerFiltered)
               return -1;
             }
             if (fa > fb) {
@@ -76,17 +72,7 @@
     const LightBoxDOM = lightboxFactory();
     modalLightBox.appendChild(LightBoxDOM);
   }
-
-  /*function displayFooter(photographers){
-    const footer_container = document.querySelector('#likes');
-    photographers.forEach((ph)=>{
-    const total_likes_model = footerFactory(ph,total);
-    const total_likes_DOM = total_likes_model.total_likes_DOM();
-    footer_container.appendChild(total_likes_DOM);
-  })*/
-  
-  
-  async function initPhotographers() {
+   async function initPhotographers() {
         const { photographers, media } = await fetchingPhotographers();
         const photographeID = window.location.search;
         const url_photographe = photographeID.slice(4);
@@ -106,9 +92,6 @@
         displayMenu(photographers);
         displayPhotos(media,photographer_all_files,"popularity");
         displayLightbox(photographer_pictures);
-        
-       /*displayFooter(photographers,total);*/
-      
         displayContactForm(selected_photographer);
         formularz();
         makingLightbox(photographer_pictures);
@@ -118,8 +101,7 @@
         arrowUpDown.classList.toggle("rotated");
         });
 
-      // Fonctionnement du tri evenement change est pour select utiliser
-      sortByType.addEventListener("change", (e) => {
+        sortByType.addEventListener("change", (e) => {
         if (e.target.value === "popularity") {
           console.log(e.target.value)
           displayPhotos(media,photographer_all_files,"popularity");

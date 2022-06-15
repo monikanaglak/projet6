@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link href="css/photographer.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
+    <link href="css/photographer.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/30340057e5.js" crossorigin="anonymous"></script>
-    <title>Fisheye - photographe </title>
+    <title>Fisheye - photographer</title>
   </head>
   <body>
     <header role="banner">
       <a href="./index.html" tabindex="0">
-        <img src="./assets/images/logo.png" class="logo" alt="Fisheye Home page" />
+        <img src="./assets/images/logo.png" class="logo" alt="Fisheye HomePage"/>
       </a>
     </header>
       <div class="container">
+        <!--Header photographer-->
         <div id="photographer_card_header"></div>
         <!--Menu dropdown-->
          <div id="menu_dropdown" aria-lable="openning menu"></div>
-         <!--Boxes pour des images-->
+         <!--Container for the images-->
          <section id="container_images" aria-lable="section photos"></section>
+         <!--Lightbox-->
          <section class="lightbox_modal" aria-hidden="true" aria-modal="true"></section>
          <main id="main" class="main"></main>
+         <!--Form-->
         <section id="contact_modal" aria-hidden="true" role="dialog" aria-modal="true"
         ></section>
         <footer id="likes"></footer>
@@ -35,7 +38,7 @@
     <script src="./scripts/factories/menu.js"></script>
     <source src="./scripts/factories/accueil.js"></script>
     <script src="./scripts/factories/formulaire.js"></script>
-    <script src="./scripts/factories/footer.js"></script>
+  
     <!--utilles-->
     <script src="./scripts/pages/photographerPage.js" defer></script>
     <script src="./scripts/utils/lightboxPage.js"></script>

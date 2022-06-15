@@ -2,10 +2,8 @@ function formularz() {
   const firstName = document.getElementById("first_name");
   const lastName = document.getElementById("last_name");
   const email = document.getElementById("email");
-  let name; /*comment déclare en 1 seul ligne tout let?*/
-  let surname;
-  let emailIn;
-  let messageIn;
+  let name,surname,emailIn,messageIn; /*comment déclare en 1 seul ligne tout let?*/
+  
 
   const textMessage = document.getElementById("your_message");
   const formPhotograph = document.querySelector("#contact_Photograph");
@@ -145,7 +143,7 @@ function formularz() {
      textMessage.addEventListener("input", (e) => {
         if (e.target.value) {
         messageIn = e.target.value;
-        if(messageIn.match(valeur_message)&& (messageIn !=="")){
+        if(messageIn.length>=10 && messageIn.length<=50){
         e.target.style.border = "4px solid #51d115";
         textMessageError.style.display = "none";
         test.removeAttribute("disabled");
@@ -160,7 +158,7 @@ function formularz() {
       } 
      }
     })
-  } /*koniec funkcji checking*/
+  }
 }
 )
 let test = document.querySelector("#test");
@@ -169,12 +167,20 @@ test.addEventListener("click",function(e){
   e.preventDefault();
   let contactModal = document.getElementById("contact_modal");
   contactModal.style.display="none";
+  initForm();
   let elements_rechange= document.querySelectorAll(".switch");
   elements_rechange.forEach((el)=>{
     el.setAttribute("tabIndex","0");
   })
 });
-
+ function initForm(){
+  console.log("in the function", firstName)
+    firstName.value =" ";
+    lastName.value =" ";
+    email.value =" ";
+    textMessage.value =" ";
+    firstName.style.border="1px solid black";
+ }
 
 }
 

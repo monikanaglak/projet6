@@ -5,7 +5,7 @@ function AddClickHeart() {
         let siblingClick = heart.previousElementSibling;
         siblingClick.innerHTML = parseInt(siblingClick.innerHTML) + 1;
         let counter_likes_footer = document.querySelector(".titre_like");
-        counter_likes_footer.innerHTML++;
+        counter_likes_footer.innerHTML=parseInt(counter_likes_footer.innerHTML)+1;
       });
     }
   } 
@@ -17,7 +17,7 @@ function AddClickEnter(){
         let siblingClick = heart.previousElementSibling;
         siblingClick.innerHTML = parseInt(siblingClick.innerHTML) + 1;
         let counter_likes_footer = document.querySelector(".titre_like");
-        counter_likes_footer.innerHTML++;
+        counter_likes_footer.innerHTML=parseInt(counter_likes_footer.innerHTML)+1;
       }
     });
   }

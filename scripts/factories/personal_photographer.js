@@ -28,7 +28,7 @@ function making_header(photographer,total) {
     <div class="footer">
        <div class="footer_info">
             <h3 class="titre_like">${total}<h3>
-            <span><i class="fas fa-heart heart switch" tabindex="0" aria-label="likes" role="button"></i></span>
+            <span><i class="fas fa-heart heart" aria-label="likes" role="button"></i></span>
         </div>
         <h3 class="footer_price">${price} /jour</h3>
     </div>
