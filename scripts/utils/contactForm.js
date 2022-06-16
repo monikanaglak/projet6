@@ -2,17 +2,14 @@ function formularz() {
   const firstName = document.getElementById("first_name");
   const lastName = document.getElementById("last_name");
   const email = document.getElementById("email");
-  let name,surname,emailIn,messageIn; /*comment déclare en 1 seul ligne tout let?*/
+  let name,surname,emailIn,messageIn;
   
 
   const textMessage = document.getElementById("your_message");
   const formPhotograph = document.querySelector("#contact_Photograph");
   const valeur_string = /^(?=.{2,50}$)[[a-zàáâäçèéêëìíîïñòóôöùúûü]+(?:['-.\s][a-z]+)*$/i;
   const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  const valeur_message = /^(?=.{10,50}$)[[a-zàáâäçèéêëìíîïñòóôöùúûü]+(?:['-.\s][a-z]+)*$/i;
-
-
- 
+  
   const firstNameError = document.querySelector(".name_error");
   const lastNameError = document.querySelector(".last_name_error");
   const emailError = document.querySelector(".email_error");
@@ -32,9 +29,10 @@ function formularz() {
     bodyDiv.classList.add("no-scroll");
     MainDiv.setAttribute("aria-hidden", "true");
     contactModal.setAttribute("aria-hidden", "false");
+    /*function checking check if the form was fill correctly*/
     checking();
 
-  /*getting all the element to put set attribute(tabindex -1)*/
+  /*getting all the element to put set attribute(tabindex -1), this will enable tabluation*/
   let elements_change= document.querySelectorAll(".switch");
   elements_change.forEach((el)=>{
     el.setAttribute("tabIndex","-1");
@@ -43,7 +41,7 @@ function formularz() {
   
   const closeForm = document.querySelector(".close_form");
   
-  // A la fermeture de la popup, on remet tous les attributs de navigation au clavier par défaut
+  // At the closing of form we put all things like before, scroling ect//
     closeForm.addEventListener("click", closing_by_x);
     function closing_by_x(){
     const bodyDiv = document.querySelector("body");
@@ -83,8 +81,6 @@ function formularz() {
     textMessageError.style.display = "none";
   });
 
-  /*const submitBtn = document.querySelector(".submitting_form");
-  submitBtn.addEventListener("click", checking());*/
   function checking(){
       let test = document.querySelector("#test");
       firstName.addEventListener("input", (e) => {
@@ -165,21 +161,26 @@ let test = document.querySelector("#test");
 
 test.addEventListener("click",function(e){
   e.preventDefault();
+  console.log(firstName.value,lastName.value,email.value,textMessage.value)
   let contactModal = document.getElementById("contact_modal");
   contactModal.style.display="none";
   initForm();
+  //giving back tabulation
   let elements_rechange= document.querySelectorAll(".switch");
   elements_rechange.forEach((el)=>{
     el.setAttribute("tabIndex","0");
   })
 });
+//function that clean up form
  function initForm(){
-  console.log("in the function", firstName)
     firstName.value =" ";
     lastName.value =" ";
     email.value =" ";
     textMessage.value =" ";
     firstName.style.border="1px solid black";
+    lastName.style.border="1px solid black";
+    email.style.border="1px solid black";
+    textMessage.style.border="1px solid black";
  }
 
 }

@@ -6,7 +6,7 @@ function contactFormFactory(data){
       container.classList.add("modal");
       container.setAttribute("aria-label", "formulaire");
       let cardForm = `
-            <div class="modal-title switch" tabindex="0">
+            <div class="modal_title switch" tabindex="0">
               <h2>Contactez-moi</h2>
               <h2 class="modal_name">${name}</h2>
               

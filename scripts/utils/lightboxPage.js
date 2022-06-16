@@ -4,16 +4,18 @@ function makingLightbox(photographer_pictures){
   const all_medias = document.querySelectorAll(".media_link");
   const body_div = document.querySelector("body");
   const MainDiv = document.getElementById("main");
+
     MainDiv.setAttribute("aria-hidden", "false");
     modalLightBox.setAttribute("aria-hidden", "true");
     const mediasAllTab = document.querySelectorAll(".modal_media .medias_all");
     const txtLightBoxTab = document.querySelectorAll(".modal_media h3");
+    //giving all elements tabindex
     for (let i = 0; i < mediasAllTab.length; i++) {
-      mediasAllTab[i].setAttribute("tabIndex", "0");
+      mediasAllTab[i].setAttribute("tabindex", "0");
     }
-    for (let i = 0; i < txtLightBoxTab.length; i++) {
-      txtLightBoxTab[i].setAttribute("tabIndex", "0");
-    }
+    /*for (let i = 0; i < txtLightBoxTab.length; i++) {
+      txtLightBoxTab[i].setAttribute("tabindex", "0");
+    }*/
     const imageSelected = document.querySelectorAll(".media_link");
     for (let i = 0; i < imageSelected.length; i++) {
       imageSelected[i].addEventListener("click", (event) => {

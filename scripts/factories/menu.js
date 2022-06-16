@@ -5,7 +5,7 @@ function dropDown(photographer){
     const menuCard = `
         <div class="menu_dropdown">
             <label for="select_images" id="sort">Trier par:</label>
-            <select id="select_images" data-trigger="select" tabindex="0" >
+            <select id="select_images" data-trigger="select" tabindex="0" class="switch">
                 <option value="popularity" tabindex="0">Popularité</option>
                 <option value="date" tabindex="0">Date</option>
                 <option value="title" tablindex="0">Titre</option>

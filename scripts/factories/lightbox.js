@@ -19,17 +19,15 @@ function lightboxFactory(){
     let lightboxCardDOM  = `<a href="#" class="controls controls_left">
     <div role="button" class="control_btn" >
       <span class="img prev_image" >
-        <i aria-hidden="true" class="fas fa-chevron-left"></i>
+        <i aria-hidden="true" class="fas fa-chevron-left" tabindex="0"></i>
       </span>
-      <p class="sr-only">Previous image</p>
     </div>
     </a>
     <a href="#" class="controls controls_right">
     <div role="button" class="control_btn">
       <span class="img next_image">
-        <i aria-hidden="true" class="fas fa-chevron-right"></i>
+        <i aria-hidden="true" class="fas fa-chevron-right" tabindex="0"></i>
       </span>
-      <p class="sr-only">Next image</p>
     </div>
     </a>
     <button class="modal_close_btn" aria-label="close dialog">
