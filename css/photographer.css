@@ -41,7 +41,6 @@
     height: 50px;
     text-align: center;
     align-items: center;
-    
 }
 .photo_title h3 {
     font-size:18px;
@@ -75,7 +74,9 @@
     flex-direction: row;
     gap:7px;
 }
-
+.titre_like{
+    margin-left:10px;
+}
 .photo_clicked{
     display: flex;
     flex-direction: column;
@@ -136,7 +137,6 @@ p{
     position:relative;
     justify-content: center;
     align-items: center;
-    
 }
 div.modal_media{
     height: 100%;
@@ -151,7 +151,6 @@ div.modal_media{
     object-fit: contain;
     margin:30px auto 10px;
 }
-
 .lightbox_modal h3 {
     font-size: 1.3em;
     color: #901C1C;
@@ -169,17 +168,14 @@ div.modal_media{
 .lightbox_modal .control_btn {
     width: 100%;
 }
-
 .lightbox_modal .controls_left {
     left: 10px;
     border: 1px solid transparent;
 }
-
 .lightbox_modal .controls_right {
     right: 10px;
     border: 1px solid transparent;
 }
-
 .lightbox_modal .controls_right:hover,
 .lightbox_modal .controls_left:hover,
 .lightbox_modal .controls_right:focus,
@@ -189,7 +185,6 @@ div.modal_media{
 }
 .lightbox_modal i {
     padding: 0 20px;
-    
 }
 .lightbox_modal .modal_close_btn {
     position: absolute;
@@ -208,21 +203,17 @@ div.modal_media{
     justify-content: center;
     align-items: center;
 }
-
 .lightbox_modal .modal_close_btn:hover,
 .lightbox_modal .modal_close_btn:focus {
     background-color: #f2bdbd;
     outline: none;
     border: 2px solid #901C1C;
 }
-
 .lightbox_modal .modal_close_btn img {
     color: #901C1C;
     width: 70%;
     height: 70%;
 }
-
-
 .contact_button {
     display: none;
 }
@@ -257,7 +248,6 @@ div.modal_media{
     object-fit: cover;
     box-shadow: 0 0 0 0.5;
 }
-
 .modal {
     border-radius: 4px;
     background-color: #DB8876;
@@ -272,13 +262,11 @@ div.modal_media{
     position: relative;
 }
 .modal_title{
-    display: flex;
     flex-direction: column;
     margin-left: 10px;
 }
 .modal_title h2{
     color:black;
-    
 }
 .close_form{
     position: absolute;
@@ -344,10 +332,13 @@ h3{
 }
 h3.footer_price{
     color:black;
-    margin-left: 130px;
+    margin-left: 120px;
     z-index: 8888;
 }
-
+#your_message{
+    width:100%;
+    height: 100px;
+}
 /* select dropdown 
 **
 */

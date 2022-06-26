@@ -94,7 +94,7 @@
         displayPhotos(media,photographer_all_files,"popularity");
         displayLightbox(photographer_pictures);
         displayContactForm(selected_photographer);
-        formularz();
+        form_checking();
         makingLightbox(photographer_pictures);
         //selecting menu_dropdown and giving him addeventlistener and listening for change
         const sort_by_choice = document.getElementById("select_images");

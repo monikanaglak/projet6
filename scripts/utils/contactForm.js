@@ -1,12 +1,8 @@
-function formularz() {
+function form_checking() {
   const firstName = document.getElementById("first_name");
   const lastName = document.getElementById("last_name");
   const email = document.getElementById("email");
-  let name,surname,emailIn,messageIn;
-  
-
   const textMessage = document.getElementById("your_message");
-  const formPhotograph = document.querySelector("#contact_Photograph");
   const valeur_string = /^(?=.{2,50}$)[[a-zàáâäçèéêëìíîïñòóôöùúûü]+(?:['-.\s][a-z]+)*$/i;
   const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   
@@ -14,54 +10,52 @@ function formularz() {
   const lastNameError = document.querySelector(".last_name_error");
   const emailError = document.querySelector(".email_error");
   const textMessageError = document.querySelector(".your_message_error");
-
+  const contact_button = document.querySelector(".contact_buttons");
+  let name,surname,emailIn,messageIn;
   
-  const ContactButton = document.querySelector(".contact_buttons");
+  contact_button.addEventListener("click", () => {
+    const body_div = document.querySelector("body");
+    const main_div = document.getElementById("main");
+    const contact_modal = document.getElementById("contact_modal");
+    const modal_title = document.querySelector(".modal_title");
 
-  
-  ContactButton.addEventListener("click", () => {
-    const bodyDiv = document.querySelector("body");
-    const MainDiv = document.getElementById("main");
-    const contactModal = document.getElementById("contact_modal");
-    const modalTitle = document.querySelector(".modal-title");
-
-    contactModal.style.display = "block";
-    bodyDiv.classList.add("no-scroll");
-    MainDiv.setAttribute("aria-hidden", "true");
-    contactModal.setAttribute("aria-hidden", "false");
+    contact_modal.style.display = "block";
+    body_div.classList.add("no-scroll");
+    main_div.setAttribute("aria-hidden", "true");
+    contact_modal.setAttribute("aria-hidden", "false");
     /*function checking check if the form was fill correctly*/
     checking();
 
-  /*getting all the element to put set attribute(tabindex -1), this will enable tabluation*/
+  /*getting all the element to put set attribute(tabindex -1)*/
   let elements_change= document.querySelectorAll(".switch");
   elements_change.forEach((el)=>{
     el.setAttribute("tabIndex","-1");
   })
-  modalTitle.focus();
-  
+  modal_title.focus();
+  //closing form by x button
   const closeForm = document.querySelector(".close_form");
   
   // At the closing of form we put all things like before, scroling ect//
     closeForm.addEventListener("click", closing_by_x);
     function closing_by_x(){
-    const bodyDiv = document.querySelector("body");
-    const MainDiv = document.getElementById("main");
-    const contactModal = document.getElementById("contact_modal");
+    const body_div = document.querySelector("body");
+    const main_div = document.getElementById("main");
+    const contact_modal = document.getElementById("contact_modal");
 
-    MainDiv.setAttribute("aria-hidden", "false");
-    contactModal.setAttribute("aria-hidden", "true");
+    main_div.setAttribute("aria-hidden", "false");
+    contact_modal.setAttribute("aria-hidden", "true");
 
-    contactModal.style.display = "none";
-    bodyDiv.classList.remove("no-scroll");
+    contact_modal.style.display = "none";
+    body_div.classList.remove("no-scroll");
 
-    enableTabindexForm();
-    const ContactButton = document.querySelector(".contact_me");
-    ContactButton.focus();
+    chainging_tab_form();
+    const contact_button = document.querySelector(".contact_me");
+    contact_button.focus();
   };
 
    
   // Fonction qui réinitialise toute la navigation au clavier
-  function enableTabindexForm() {
+  function chainging_tab_form() {
     let removing_reset = document.querySelectorAll(".switch");
     removing_reset.forEach((rem)=>{
       rem.setAttribute("tabIndex","0");
@@ -82,97 +76,112 @@ function formularz() {
   });
 
   function checking(){
-      let test = document.querySelector("#test");
-      firstName.addEventListener("input", (e) => {
-        if (e.target.value) {
+    let btn = document.querySelector("#test");
+    firstName.addEventListener("input", (e) => {
+      if (e.target.value) {
         name = e.target.value;
         if(name.match(valeur_string) && (name !== "")){
           e.target.style.border = "4px solid #51d115";
           firstNameError.style.display = "none";
-          test.removeAttribute("disabled");
+          btn.removeAttribute("disabled");
         }
         else{
           e.target.style.border = "4px solid red";
           firstNameError.innerHTML =
-            "Veuillez entrer 2 caractères ou plus pour le champ du prénom.Sans chiffres";
-            firstNameError.style.display = "inline";
-            test.setAttribute("disabled","disabled");
-          } 
+          "Veuillez entrer 2 caractères ou plus pour le champ du prénom.Sans chiffres";
+          firstNameError.style.display = "inline";
+          btn.setAttribute("disabled","disabled");
+        } 
       }
     })
-        lastName.addEventListener("input", (e) => {
-          if (e.target.value) {
-          surname = e.target.value;
-          if(surname.match(valeur_string) && (surname !=="")){
-            e.target.style.border = "4px solid #51d115";
-            lastNameError.style.display = "none";
-            test.removeAttribute("disabled");
-          }
-          else{
-            e.target.style.border = "4px solid red";
-            lastNameError.innerHTML =
-              "Veuillez entrer 2 caractères ou plus pour le champ du prénom.Sans chiffres";
-              lastNameError.style.display = "inline";
-              test.setAttribute("disabled","disabled");
-            } 
-          }
-        })
-     
-          email.addEventListener("input", (e) => {
-            if (e.target.value) {
-              emailIn = e.target.value;
-            if(emailIn.match(emailRegex)&&(emailIn !=="")){
-            e.target.style.border = "4px solid #51d115";
-            emailError.style.display = "none";
-            test.removeAttribute("disabled");
+    lastName.addEventListener("input", (e) => {
+      if (e.target.value) {
+        surname = e.target.value;
+        if(surname.match(valeur_string) && (surname !=="")){
+          e.target.style.border = "4px solid #51d115";
+          lastNameError.style.display = "none";
+          btn.removeAttribute("disabled");
+        }
+        else{
+          e.target.style.border = "4px solid red";
+          lastNameError.innerHTML =
+          "Veuillez entrer 2 caractères ou plus pour le champ du prénom.Sans chiffres";
+          lastNameError.style.display = "inline";
+          btn.setAttribute("disabled","disabled");
+        } 
       }
-      else{
-        e.target.style.border = "4px solid red";
-        emailError.innerHTML =
+    })
+    email.addEventListener("input", (e) => {
+      if (e.target.value) {
+        emailIn = e.target.value;
+        if(emailIn.match(emailRegex)&&(emailIn !=="")){
+          e.target.style.border = "4px solid #51d115";
+          emailError.style.display = "none";
+          btn.removeAttribute("disabled");
+        }
+        else{
+          e.target.style.border = "4px solid red";
+          emailError.innerHTML =
           "Veuillez entrer un adresse email correct";
           emailError.style.display = "inline";
-          test.setAttribute("disabled","disabled");
+          btn.setAttribute("disabled","disabled");
           
-      } 
-    }
-})
-     textMessage.addEventListener("input", (e) => {
-        if (e.target.value) {
+        } 
+      }
+    })
+    textMessage.addEventListener("input", (e) => {
+      if (e.target.value) {
         messageIn = e.target.value;
         if(messageIn.length>=10 && messageIn.length<=50){
-        e.target.style.border = "4px solid #51d115";
-        textMessageError.style.display = "none";
-        test.removeAttribute("disabled");
+         e.target.style.border = "4px solid #51d115";
+         textMessageError.style.display = "none";
+         btn.removeAttribute("disabled");
+        }
+        else{
+          e.target.style.border = "4px solid red";
+          textMessageError.innerHTML =
+          "Veuillez entrer un message plus long que 10 caractères";
+          textMessageError.style.display = "inline";
+          btn.setAttribute("disabled","disabled");
+        } 
       }
-      else{
-       e.target.style.border = "4px solid red";
-       textMessageError.innerHTML =
-      "Veuillez entrer un message plus long que 10 caractères";
-       textMessageError.style.display = "inline";
-       test.setAttribute("disabled","disabled");
-       
-      } 
-     }
     })
   }
 }
 )
-let test = document.querySelector("#test");
+let send_btn = document.querySelector("#test");
 
-test.addEventListener("click",function(e){
+send_btn.addEventListener("click",function(e){
   e.preventDefault();
-  console.log(firstName.value,lastName.value,email.value,textMessage.value)
-  let contactModal = document.getElementById("contact_modal");
-  contactModal.style.display="none";
-  initForm();
-  //giving back tabulation
+  if((name == undefined)){
+    firstNameError.innerHTML = "Le prénom ne doit pas être vide";
+    firstNameError.style.color = "red";
+  }
+  if((surname == undefined)){
+    lastNameError.innerHTML = "Le nomfamille ne doit pas être vide";
+    lastNameError.style.color = "red";
+  }
+  if((emailIn == undefined)){
+    emailError.innerHTML = "Le doit être indiquer";
+    emailError.style.color = "red";
+  }
+  if((messageIn == undefined)){
+    textMessageError.innerHTML = "Le message ne doit pas être vide";
+    textMessageError.style.color = "red";
+  }
+  if(name && surname && emailIn && messageIn){
+   
+    clean_form();
+  }
   let elements_rechange= document.querySelectorAll(".switch");
   elements_rechange.forEach((el)=>{
     el.setAttribute("tabIndex","0");
   })
 });
-//function that clean up form
- function initForm(){
+function clean_form(){
+  console.log(firstName.value,lastName.value,email.value,textMessage.value);
+  let contact_modal = document.getElementById("contact_modal");
+  contact_modal.style.display="none";
     firstName.value =" ";
     lastName.value =" ";
     email.value =" ";
@@ -181,9 +190,7 @@ test.addEventListener("click",function(e){
     lastName.style.border="1px solid black";
     email.style.border="1px solid black";
     textMessage.style.border="1px solid black";
- }
-
 }
-
+}
 
 

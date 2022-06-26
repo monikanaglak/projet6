@@ -7,7 +7,7 @@ function contactFormFactory(data){
       container.setAttribute("aria-label", "formulaire");
       let cardForm = `
             <div class="modal_title switch" tabindex="0">
-              <h2>Contactez-moi</h2>
+              <h2 class="contactez_moi">Contactez-moi</h2>
               <h2 class="modal_name">${name}</h2>
               
               <a href="#" aria-label="Close" class="close_form" tabindex="0">
@@ -26,14 +26,14 @@ function contactFormFactory(data){
             <p class="last_name_error error_msn"></p>
   
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" aria-required="true" tabindex="0"/>
+            <input type="email" name="email" id="email" aria-required="true" tabindex="0"/required>
             <p class="email_error error_msn"></p>
 
             <label for="your_message">Votre message</label>
-            <textarea id="your_message" name="message" aria-required="true" tabindex="0" rows="10" cols="50"></textarea>
+            <textarea id="your_message" name="message" aria-required="true" tabindex="0" ></textarea>
             <p class="your_message_error error_msn hide"></p>
           </div>
-          <button class="submitting_form" type="submit" tabindex="0" id="test" disabled="disabled">Envoyer</button>
+          <button class="submitting_form" type="submit" tabindex="0" id="test"  class="switch" >Envoyer</button>
         
         </form>
         

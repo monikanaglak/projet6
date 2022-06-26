@@ -30,7 +30,7 @@ function making_header(photographer,total) {
             <h3 class="titre_like">${total}<h3>
             <span><i class="fas fa-heart heart" aria-label="likes" role="button"></i></span>
         </div>
-        <h3 class="footer_price">${price} /jour</h3>
+        <h3 class="footer_price">${price}€/jour</h3>
     </div>
      `;
     
