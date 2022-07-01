@@ -105,7 +105,7 @@ function form_checking() {
         else{
           e.target.style.border = "4px solid red";
           lastNameError.innerHTML =
-          "Veuillez entrer 2 caractères ou plus pour le champ du prénom.Sans chiffres";
+          "Veuillez entrer 2 caractères ou plus pour le champ du nom de famille.";
           lastNameError.style.display = "inline";
           btn.setAttribute("disabled","disabled");
         } 
@@ -154,20 +154,20 @@ let send_btn = document.querySelector("#test");
 send_btn.addEventListener("click",function(e){
   e.preventDefault();
   if((name == undefined)){
-    firstNameError.innerHTML = "Le prénom ne doit pas être vide";
-    firstNameError.style.color = "red";
+    firstNameError.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du prénom.";
+    firstNameError.style.color = "white";
   }
   if((surname == undefined)){
-    lastNameError.innerHTML = "Le nomfamille ne doit pas être vide";
-    lastNameError.style.color = "red";
+    lastNameError.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du nom de famille.";
+    lastNameError.style.color = "white";
   }
   if((emailIn == undefined)){
-    emailError.innerHTML = "Le doit être indiquer";
-    emailError.style.color = "red";
+    emailError.innerHTML = "Veuillez entrer un adresse email correct";
+    emailError.style.color = "white";
   }
   if((messageIn == undefined)){
-    textMessageError.innerHTML = "Le message ne doit pas être vide";
-    textMessageError.style.color = "red";
+    textMessageError.innerHTML = "Veuillez entrer un message plus long que 10 caractères";
+    textMessageError.style.color = "white";
   }
   if(name && surname && emailIn && messageIn){
    

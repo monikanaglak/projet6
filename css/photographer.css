@@ -1,3 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "DM Sans", sans-serif;
+}
+
+
 #contact_modal {
     display: none;
     position: fixed;
@@ -9,7 +19,6 @@
     overflow: auto;
     background: rgba(0, 0, 0, 0.2);
 }
-/*page accueil*/
 .logo{
     height: 50px;
     width: 180px;
@@ -22,18 +31,47 @@
     display: flex;
     flex-direction: column;
 }
-/***page photographer*/
+/***page photographer header*/
+
 .container_header_photographer{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin:0 5px;
+    height: 300px;
+    line-height: 83px;
+    background-color:#fafafa;
 }
-#container_images{
-    display: grid;
-    grid-template-columns: repeat(3, 300px);
-    justify-content: center;
-    align-content: center;
-    gap:40px;
+.photographer_info{
+    display: flex;
+    flex-direction: column;
+    gap:2px;
+    
+}
+.photographer_info h3{
+    color:#901C1C;
+    font-size: 1.5rem;
+    line-height: 31px;
+}
+.photographer_info p{
+    color:#525252;
+    font-size: 18px;
+    line-height: 23px;
+}
+.photographer_info h2{
+    color:#D3573C;
+    margin:0;
+    font-family: 'DM sans';
+    font-weight: 400;
+    font-size: 4rem;
+    line-height: 83px;
+}
+.photographer_image img{
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    box-shadow: 0 0 0 0.5;
 }
 .photo_info{
     display: flex;
@@ -43,8 +81,37 @@
     align-items: center;
 }
 .photo_title h3 {
-    font-size:18px;
+    font-size:22px;
     font-weight: normal;
+    color:#901C1C;
+}
+#container_images{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    gap:70px;
+    margin-top: 30px;
+    margin:0 20px;
+}
+.photograph-catalog-card .card_image,
+.photograph-catalog-card .card_video {
+    display: block;
+    width: 350px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.photo_clicked{
+    display: flex;
+    flex-direction: column;
+}
+.medias_all{
+    width: 350px;
+    height: 300px;
+    object-fit: cover;
+    object-position: 50% 30%;
+    border-radius: 5px;
 }
 .menu_dropdown{
     display: flex;
@@ -68,11 +135,21 @@
     cursor: pointer;
     margin-left: 5px;
     width: 200px;
-  }
+}
 .wrapper_like{
     display: flex;
     flex-direction: row;
     gap:7px;
+    align-items: center;
+    margin-right: 5px;
+}
+.num{
+    color: #901C1C;
+    font-size: 22px;
+}
+.fa-heart{
+    color:#901C1C;
+    font-size: 18px;
 }
 .titre_like{
     margin-left:10px;
@@ -87,33 +164,8 @@
     height: 300px;
     object-fit: cover;
 }
-#photographer_card_header {
-    width: 90vw;
-    margin: 0 auto;
-    padding-top: 5px;
-    background-color:#fafafa;
-}
-.photographer_info{
-    display: flex;
-    flex-direction: column;
-    column-gap:2px;
-    flex-wrap: wrap;
-    width: 200px;
-}
-h2{
-    color:#D3573C;
-    font-family: 'DM sans';
-    font-weight: 400;
-    font-size: 40px;
-}
-h3{
-    color: #D3573C;
-    font-size: 24px;
-}
-p{
-    font-size: 16px;
-    margin-top: -10px;
-}
+
+
 /************* lightbox***************/
 
 .lightbox_modal {
@@ -237,17 +289,9 @@ div.modal_media{
 }
 .submitting_form{
     margin:30px auto;
+    margin-left:5px;
 }
-.photographer_image{
-    padding-left: 150px;
-}
-.photographer_image img{
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    box-shadow: 0 0 0 0.5;
-}
+
 .modal {
     border-radius: 4px;
     background-color: #DB8876;
@@ -322,7 +366,7 @@ form input {
     left:1200px;
     width: 300px;
     height: 50px;
-    background-color:#D3573C;
+    background-color:#DB8876;
 }
 h3{
     color:black;
@@ -360,7 +404,7 @@ h3.footer_price{
 }
 
 #menu_dropdown select {
-    width: 170px;
+    width: 180px;
     height: 70px;
     font-weight: bold;
     color:white;
@@ -384,11 +428,4 @@ h3.footer_price{
     background-color: #901C1C;
 }
 
-#menu_dropdown i {
-    position: absolute;
-    top: 10px;
-    right: 5px;
-    color:white;
-    font-size: 2em;
-    pointer-events: none;
-}
+

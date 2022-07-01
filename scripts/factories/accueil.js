@@ -1,5 +1,3 @@
-
-
 function accueilFactory(photographer) {
   const { id, name, portrait, city, country, tagline, price } = photographer;
   const picture = `./assets/photographers/PhotographersPortrait/${portrait}`;

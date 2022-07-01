@@ -7,14 +7,14 @@ function showing_photos(media) {
       const wrapperPhotos = document.createElement("div");
       wrapperPhotos.classList.add("photo_clicked");
       let photosCardDOM = 
-       `<a href ="#" class="media_link switch" data-mediaid="${id}"  role="button" aria-label="${alt}" tabindex="0" >`;
+       `<a href ="#" class= "media_link switch" data-mediaid="${id}"  role="button" aria-label="${alt}" tabindex ="0" >`;
       if (video !== undefined) {
         photosCardDOM += `<video class="card_video medias_all switch" aria-label="${alt}" controls>
         <source src="${videos}" type="video/mp4">
         </video>`;
       }
      else {
-      photosCardDOM += `<img class="card_image medias_all" src="${pictures}" alt="${alt}">`;
+      photosCardDOM += `<img class="card_image medias_all switch"tabindex="0" src="${pictures}" alt="${alt}">`;
       }
       photosCardDOM += `
       </a>

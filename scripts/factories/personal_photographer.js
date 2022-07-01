@@ -1,11 +1,9 @@
+function making_header(photographer, total) {
+  const { name, portrait, city, country, tagline, id, alt, price } =
+    photographer;
+  const picture = `./assets/photographers/PhotographersPortrait/${portrait}`;
 
-
-
-function making_header(photographer,total) {
-    const { name, portrait, city, country, tagline, id,alt,price} = photographer;
-    const picture = `./assets/photographers/PhotographersPortrait/${portrait}`;
-    
-    function photographerCardDOM (){
+  function photographerCardDOM() {
     const wrapperHeader = document.createElement("div");
     wrapperHeader.classList.add("photograph_header");
     wrapperHeader.classList.add(id);
@@ -33,7 +31,7 @@ function making_header(photographer,total) {
         <h3 class="footer_price">${price}€/jour</h3>
     </div>
      `;
-    
+
     wrapperHeader.innerHTML = photographerCardDOM;
     return wrapperHeader;
   }
@@ -51,4 +49,4 @@ function making_header(photographer,total) {
     price,
     photographerCardDOM,
   };
- }
+}
