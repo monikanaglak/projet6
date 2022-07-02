@@ -1,3 +1,5 @@
+
+// function that counts click at the heart, event listener il listening for the clicks
 function AddClickHeart() {
     const hearts = document.querySelectorAll(".heart");
     for (const heart of hearts) {
@@ -9,6 +11,7 @@ function AddClickHeart() {
       });
     }
   } 
+//function that counts enters on the heart, enter is counting as a like and counter grows
 function AddClickEnter(){
   const hearts = document.querySelectorAll(".heart");
   for (const heart of hearts) {

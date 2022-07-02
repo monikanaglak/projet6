@@ -1,11 +1,11 @@
-
-function contactFormFactory(data){
-    const { name, id } = data;
-    function contactFormDOM() {
-      const container = document.createElement("div");
-      container.classList.add("modal");
-      container.setAttribute("aria-label", "formulaire");
-      let cardForm = `
+//function create form
+function contactFormFactory(data) {
+  const { name, id } = data;
+  function contactFormDOM() {
+    const container = document.createElement("div");
+    container.classList.add("modal");
+    container.setAttribute("aria-label", "formulaire");
+    let cardForm = `
             <div class="modal_title switch" tabindex="0">
               <h2 class="contactez_moi">Contactez-moi</h2>
               <h2 class="modal_name">${name}</h2>
@@ -38,10 +38,9 @@ function contactFormFactory(data){
         </form>
         
   `;
-  
-      container.innerHTML = cardForm;
-      return container;
-    }
-    return { name, id, contactFormDOM };
+
+    container.innerHTML = cardForm;
+    return container;
   }
-  
+  return { name, id, contactFormDOM };
+}

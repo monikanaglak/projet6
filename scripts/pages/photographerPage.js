@@ -4,7 +4,7 @@ async function fetchingPhotographers() {
   const photographers = response.json();
   return photographers;
 }
-/*function injection header pour chaque photographe*/
+/*function injection header for each photographer*/
 function displayHeader(photographers, total) {
   const photographerMain = document.getElementById("photographer_card_header");
   photographers.forEach((photographer) => {
@@ -13,14 +13,14 @@ function displayHeader(photographers, total) {
     photographerMain.appendChild(photographerCardDOM);
   });
 }
-/*function menu dorpdown*/
+/*function menu dropdown*/
 function displayMenu(photographer) {
   const menuBox = document.getElementById("menu_dropdown");
   const menu = dropDown(photographer);
   const menuCard = menu.menuCard();
   menuBox.appendChild(menuCard);
 }
-/*function form display*/
+/*function  display formulaire*/
 function displayContactForm(selected_photographer) {
   const cardFormSection = document.getElementById("contact_modal");
   selected_photographer.forEach((fotograf) => {
@@ -56,8 +56,7 @@ function displayPhotos(media, photographer_all_files, filterBy) {
       return new Date(b.date) - new Date(a.date);
     });
   }
-
-  wrapper_images.innerHTML = "";
+wrapper_images.innerHTML = "";
   medias_photographer_filtered.forEach((shoot) => {
     const box = showing_photos(shoot);
     const photosCardDOM = box.photosCardDOM();
@@ -99,8 +98,10 @@ async function initPhotographers() {
   displayHeader(selected_photographer, total);
   displayMenu(photographers);
   displayPhotos(media, photographer_all_files, "popularity");
-  displayLightbox(photographer_pictures);
+  
   displayContactForm(selected_photographer);
+  displayLightbox(photographer_pictures);
+  makingLightbox(selected_photographer);
   form_checking();
 
   //selecting menu_dropdown and giving him addeventlistener and listening for change
@@ -130,6 +131,7 @@ async function initPhotographers() {
     }
     AddClickEnter();
     AddClickHeart();
+    displayLightbox();
     makingLightbox(photographer_good_filter);
   });
   AddClickHeart();
